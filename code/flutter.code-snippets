@@ -1,0 +1,984 @@
+{
+    "Stateless Widget": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "stl",
+            "statelessWidget"
+        ],
+        "description": "Snippet for Stateless Widget",
+        "body": [
+            "import 'package:flutter/material.dart';\n\n",
+            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}}",
+            "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget",
+            "/// {@endtemplate}",
+            "class $1 extends StatelessWidget {",
+            "  /// {@macro $TM_FILENAME_BASE.$2}",
+            "  const $1({",
+            "    Key? key,",
+            "  }) : super(key: key);",
+            "  ",
+            "  @override",
+            "  Widget build(BuildContext context) =>",
+            "    const Placeholder();${0}",
+            "} // $1\n"
+        ]
+    },
+    "Stateless Widget with child": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "stlChild",
+            "statelessWidgetWithChild"
+        ],
+        "description": "Snippet for Stateless Widget with child",
+        "body": [
+            "import 'package:flutter/material.dart';\n\n",
+            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}}",
+            "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget",
+            "/// {@endtemplate}",
+            "class $1 extends StatelessWidget {",
+            "  /// {@macro $TM_FILENAME_BASE.$2}",
+            "  const $1({",
+            "    required this.child,",
+            "    Key? key,",
+            "  }) : super(key: key);",
+            "  ",
+            "  /// The widget below this widget in the tree.",
+            "  final Widget child;",
+            "  ",
+            "  @override",
+            "  Widget build(BuildContext context) =>",
+            "    child;${0}",
+            "} // $1\n"
+        ]
+    },
+    "Stateful Widget": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "stf",
+            "statefulWidget"
+        ],
+        "description": "Snippet for Stateful Widget",
+        "body": [
+            "import 'package:flutter/material.dart';",
+            "import 'package:meta/meta.dart';\n\n",
+            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}}",
+            "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget",
+            "/// {@endtemplate}",
+            "class ${1} extends StatefulWidget {",
+            "  /// {@macro $TM_FILENAME_BASE.$2}",
+            "  const ${1}({",
+            "    Key? key,",
+            "  }) : super(key: key);",
+            "  ",
+            "  /// The state from the closest instance of this class",
+            "  /// that encloses the given context, if any.",
+            "  @internal",
+            "  static _${1}State? maybeOf(BuildContext context) =>",
+            "    context.findAncestorStateOfType<_${1}State>();",
+            "  ",
+            "  @override",
+            "  State<${1}> createState() => _${1}State();",
+            "} // $1",
+            "",
+            "/// State for widget ${1}",
+            "class _${1}State extends State<${1}> {",
+            "",
+            "  /* #region Lifecycle */",
+            "  @override",
+            "  void initState() {",
+            "    super.initState();",
+            "    // Initial state initialization",
+            "  }",
+            "  ",
+            "  @override",
+            "  void didUpdateWidget(${1} oldWidget) {",
+            "    super.didUpdateWidget(oldWidget);",
+            "    // Widget configuration changed",
+            "  }",
+            "  ",
+            "  @override",
+            "  void didChangeDependencies() {",
+            "    super.didChangeDependencies();",
+            "    // The configuration of InheritedWidgets has changed",
+            "    // Also called after initState but before build",
+            "  }",
+            "  ",
+            "  @override",
+            "  void dispose() {",
+            "    // Permanent removal of a tree stent",
+            "    super.dispose();",
+            "  }",
+            "  /* #endregion */",
+            "  ",
+            "  @override",
+            "  Widget build(BuildContext context) =>",
+            "    const Placeholder();${0}",
+            "} // _${1}State\n"
+        ]
+    },
+    "Stateful Widget with child": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "stfChild",
+            "statefulfWithChild"
+        ],
+        "description": "Snippet for Stateful Widget with child",
+        "body": [
+            "import 'package:flutter/material.dart';",
+            "import 'package:meta/meta.dart';\n\n",
+            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}}",
+            "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget",
+            "/// {@endtemplate}",
+            "class ${1} extends StatefulWidget {",
+            "  /// {@macro $TM_FILENAME_BASE.$2}",
+            "  const $1({",
+            "    required this.child,",
+            "    Key? key,",
+            "  }) : super(key: key);",
+            "  ",
+            "  /// The widget below this widget in the tree.",
+            "  final Widget child;",
+            "  ",
+            "  /// The state from the closest instance of this class",
+            "  /// that encloses the given context, if any.",
+            "  static ${1}Controller? maybeOf(BuildContext context) =>",
+            "    context.findAncestorStateOfType<_${1}State>();",
+            "  ",
+            "  @override",
+            "  State<${1}> createState() => _${1}State();",
+            "} // $1",
+            "",
+            "/// State for widget ${1}",
+            "class _${1}State extends State<${1}> with ${1}Controller {",
+            "",
+            "  /* #region Lifecycle */",
+            "  @override",
+            "  void initState() {",
+            "    super.initState();",
+            "    // Initial state initialization",
+            "  }",
+            "  ",
+            "  @override",
+            "  void didUpdateWidget(${1} oldWidget) {",
+            "    super.didUpdateWidget(oldWidget);",
+            "    // Widget configuration changed",
+            "  }",
+            "  ",
+            "  @override",
+            "  void didChangeDependencies() {",
+            "    super.didChangeDependencies();",
+            "    // The configuration of InheritedWidgets has changed",
+            "    // Also called after initState but before build",
+            "  }",
+            "  ",
+            "  @override",
+            "  void dispose() {",
+            "    // Permanent removal of a tree stent",
+            "    super.dispose();",
+            "  }",
+            "  /* #endregion */",
+            "  ",
+            "  @override",
+            "  Widget build(BuildContext context) =>",
+            "    widget.child;",
+            "} // _${1}State\n",
+            "/// Controller for widget ${1}",
+            "mixin ${1}Controller {",
+            "  ${0}",
+            "} // ${1}Controller\n",
+        ]
+    },
+    "Stateful Widget with animation": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "stfAnim",
+            "statefulfAnimation",
+            "singleTickerProviderStateMixin",
+            "animation"
+        ],
+        "description": "Snippet for Stateful Widget with animation",
+        "body": [
+            "import 'package:flutter/material.dart';",
+            "import 'package:meta/meta.dart';\n\n",
+            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}}",
+            "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget",
+            "/// {@endtemplate}",
+            "class ${1} extends StatefulWidget {",
+            "  /// {@macro $TM_FILENAME_BASE.$2}",
+            "  const $1({",
+            "    required this.child,",
+            "    this.duration = const Duration(milliseconds: 250),",
+            "    Key? key,",
+            "  }) : super(key: key);",
+            "  ",
+            "  /// The widget below this widget in the tree.",
+            "  final Widget child;",
+            "  ",
+            "  /// The duration of the animation.",
+            "  final Duration duration;",
+            "  ",
+            "  /// The state from the closest instance of this class",
+            "  /// that encloses the given context, if any.",
+            "  static ${1}Controller? maybeOf(BuildContext context) =>",
+            "    context.findAncestorStateOfType<_${1}State>();",
+            "  ",
+            "  @override",
+            "  State<${1}> createState() => _${1}State();",
+            "} // $1",
+            "",
+            "/// State for widget ${1}",
+            "class _${1}State extends State<${1}> with",
+            "  SingleTickerProviderStateMixin, ${1}Controller {",
+            "",
+            "  late AnimationController _controller;",
+            "",
+            "  /* #region Lifecycle */",
+            "  @override",
+            "  void initState() {",
+            "    super.initState();",
+            "    _controller = AnimationController(",
+            "      vsync: this,",
+            "      duration: widget.duration,",
+            "      value: 0,",
+            "    );",
+            "  }",
+            "  ",
+            "  @override",
+            "  void didUpdateWidget(${1} oldWidget) {",
+            "    super.didUpdateWidget(oldWidget);",
+            "    if (widget.duration != _controller.duration) {",
+            "      _controller.duration = widget.duration;",
+            "    }",
+            "  }",
+            "  ",
+            "  @override",
+            "  void didChangeDependencies() {",
+            "    super.didChangeDependencies();",
+            "    // The configuration of InheritedWidgets has changed",
+            "    // Also called after initState but before build",
+            "  }",
+            "  ",
+            "  @override",
+            "  void dispose() {",
+            "    _controller.dispose();",
+            "    super.dispose();",
+            "  }",
+            "  /* #endregion */",
+            "  ",
+            "  Future<void> forward() async {",
+            "    if (_controller.isCompleted) return;",
+            "    try {",
+            "      await _controller.forward().orCancel;",
+            "    } on TickerCanceled {",
+            "      // the animation got canceled, probably because we were disposed",
+            "    }",
+            "  }",
+            "  ",
+            "  Future<void> reverse() async {",
+            "    if (_controller.isDismissed) return;",
+            "    try {",
+            "      await _controller.reverse().orCancel;",
+            "    } on TickerCanceled {",
+            "      // the animation got canceled, probably because we were disposed",
+            "    }",
+            "  }",
+            "  ",
+            "  @override",
+            "  Widget build(BuildContext context) =>",
+            "    widget.child;",
+            "} // _${1}State\n",
+            "/// Controller for widget ${1}",
+            "mixin ${1}Controller {",
+            "  ${0}",
+            "} // ${1}Controller\n",
+        ]
+    },
+    "Inherited Widget": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "inh",
+            "inheritedWidget"
+        ],
+        "description": "Inherited Widget",
+        "body": [
+            "import 'package:flutter/material.dart';\n\n",
+            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}}",
+            "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget",
+            "/// {@endtemplate}",
+            "class ${1} extends InheritedWidget {",
+            "  /// {@macro $TM_FILENAME_BASE.$2}",
+            "  const ${1}({",
+            "    required Widget child,",
+            "    Key? key,",
+            "  }) : super(key: key, child: child);",
+            "  ",
+            "  @override",
+            "  bool updateShouldNotify(${1} oldWidget) =>",
+            "    false;${0}",
+            "} // ${1}\n"
+        ]
+    },
+    "Inherited Notifier": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "inhNotifier",
+            "inheritedNotifier"
+        ],
+        "description": "Inherited Notifier",
+        "body": [
+            "import 'package:flutter/material.dart';\n\n",
+            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}}",
+            "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget",
+            "/// {@endtemplate}",
+            "class ${1} extends InheritedNotifier<ValueListenable<${2:int}>> {",
+            "  /// {@macro $TM_FILENAME_BASE.$2}",
+            "  const ${1}({",
+            "    required Widget child,",
+            "    required ValueListenable<${2:int}> notifier,",
+            "    Key? key,",
+            "  }) : super(key: key, child: child, notifier: notifier);",
+            "  ",
+            "  @override",
+            "  bool updateShouldNotify(${1} oldWidget) =>",
+            "    false;${0}",
+            "} // ${1}\n"
+        ]
+    },
+    "Inherited Model": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "inhModel",
+            "inheritedModel"
+        ],
+        "description": "Inherited Model",
+        "body": [
+            "import 'package:collection/collection.dart';",
+            "import 'package:flutter/foundation.dart';",
+            "import 'package:flutter/material.dart';\n\n",
+            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}}",
+            "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} widget",
+            "/// {@endtemplate}",
+            "class ${1} extends InheritedModel<int> {",
+            "  /// {@macro ${1}.${1}}",
+            "  const ${1}({",
+            "    required Widget child,",
+            "    required this.values,",
+            "    Key? key,",
+            "  }) : super(key: key, child: child);",
+            "",
+            "  final List<${2:Entity}> values;",
+            "",
+            "  static ${2}? getById(BuildContext context, int id) =>",
+            "      InheritedModel.inheritFrom<${1}>(context, aspect: id)",
+            "          ?.values",
+            "          .firstWhereOrNull((e) => e.id == id);",
+            "",
+            "  @override",
+            "  bool updateShouldNotify(${1} oldWidget) =>",
+            "      !listEquals(values, oldWidget.values);",
+            "",
+            "  @override",
+            "  bool updateShouldNotifyDependent(${1} oldWidget, Set<int> aspects) {",
+            "    for (final id in aspects) {",
+            "      if (values.firstWhereOrNull((e) => e.id == id) ==",
+            "          oldWidget.values.firstWhereOrNull((e) => e.id == id)) return true;",
+            "    }",
+            "    return false;",
+            "  }",
+            "} // ${1}\n"
+        ]
+    },
+    "Build Method": {
+        "scope": "flutter, dart",
+        "prefix": "build",
+        "description": "Describes the part of the user interface represented by this widget.",
+        "body": [
+            "@override",
+            "Widget build(BuildContext context) =>",
+            "  ${0:const Placeholder()};"
+        ]
+    },
+    "Notification Listener": {
+        "scope": "flutter, dart",
+        "prefix": "notificationListener",
+        "description": "Notification Listener",
+        "body": [
+            "NotificationListener<${1}>(",
+            "  onNotification: (notification) {",
+            "    // ...",
+            "    // Return true to cancel the notification bubbling",
+            "    return true;",
+            "  },",
+            "  child: child,${0}",
+            "),"
+        ]
+    },
+    "Custom Painter": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "painter",
+            "customPainter"
+        ],
+        "description": "Used for creating custom paint",
+        "body": [
+            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}}",
+            "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}}Painter",
+            "/// {@endtemplate}",
+            "class ${1}Painter extends CustomPainter {",
+            "",
+            "  const ${1}Painter({Listenable? repaint}) : super(repaint: repaint);",
+            "",
+            "  @override",
+            "  void paint(Canvas canvas, Size size) {",
+            "    ${0}",
+            "  }",
+            "",
+            "  @override",
+            "  bool shouldRepaint(${1}Painter oldDelegate) => false;",
+            "",
+            "  @override",
+            "  bool shouldRebuildSemantics(${1}Painter oldDelegate) => false;",
+            "} // ${1}\n"
+        ]
+    },
+    "Custom Clipper ": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "clipper",
+            "customClipper"
+        ],
+        "description": "Used for creating custom shapes",
+        "body": [
+            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}}",
+            "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}}Painter",
+            "/// {@endtemplate}",
+            "class ${1}Clipper extends CustomClipper<Path> {",
+            "",
+            "  const ${1}Clipper({Listenable? reclip}) : super(reclip: reclip);",
+            "",
+            "  @override",
+            "  Path getClip(Size size) {",
+            "    ${0}",
+            "  }",
+            "",
+            "  @override",
+            "  bool shouldReclip(${1}Clipper oldClipper) => false;",
+            "} // ${1}\n"
+        ]
+    },
+    "of": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "of",
+            "maybeOf"
+        ],
+        "description": "InheritedWidget.of(BuildContext)",
+        "body": [
+            "/// The state from the closest instance of this class",
+            "/// that encloses the given context, if any.",
+            "/// e.g. `${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}}.maybeOf(context)`",
+            "static ${1}? maybeOf(BuildContext context, {bool listen = true}) {",
+            "  if (listen) {",
+            "    return context.dependOnInheritedWidgetOfExactType<${1}>();",
+            "  } else {",
+            "    final inhW = context.getElementForInheritedWidgetOfExactType<${1}>()?.widget;",
+            "    return inhW is ${1} ? inhW : null;",
+            "  }",
+            "}",
+            "",
+            "static Never _notFoundInheritedWidgetOfExactType() =>",
+            "  throw ArgumentError(",
+            "    'Out of scope, not found inherited widget '",
+            "        'a ${1} of the exact type',",
+            "    'out_of_scope',",
+            "  );",
+            "",
+            "/// The state from the closest instance of this class",
+            "/// that encloses the given context.",
+            "/// e.g. `${1}.of(context)`",
+            "static ${1}? of(BuildContext context, {bool listen = true}) =>",
+            "  maybeOf(context, listen: listen) ?? _notFoundInheritedWidgetOfExactType();${0}\n"
+        ]
+    },
+    "stateOf": {
+        "scope": "flutter, dart",
+        "prefix": "stateOf",
+        "description": "StatefulWidget.of(BuildContext)",
+        "body": [
+            "/// The state from the closest instance of this class",
+            "/// that encloses the given context, if any.",
+            "/// e.g. `${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}State}.maybeOf(context)`",
+            "static ${2:${1}State}? maybeOf(BuildContext context) =>",
+            "  context.findAncestorStateOfType<${2}>();",
+            "",
+            "static Never _notFoundStateOfType() =>",
+            "  throw ArgumentError(",
+            "    'Out of scope, not found state of type ${2}',",
+            "    'out_of_scope',",
+            "  );",
+            "",
+            "/// The state from the closest instance of this class",
+            "/// that encloses the given context.",
+            "/// e.g. `${1}.of(context)`",
+            "static ${2}? of(BuildContext context) =>",
+            "  maybeOf(context) ?? _notFoundStateOfType();${0}\n"
+        ]
+    },
+    "widgetOf": {
+        "scope": "flutter, dart",
+        "prefix": "widgetOf",
+        "description": "StatelessWidget.of(BuildContext)",
+        "body": [
+            "/// The state from the closest instance of this class",
+            "/// that encloses the given context, if any.",
+            "/// e.g. `${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}State}.maybeOf(context)`",
+            "static ${1}? maybeOf(BuildContext context) =>",
+            "  context.findAncestorWidgetOfExactType<${1}>();",
+            "",
+            "static Never _notFoundStateOfType() =>",
+            "  throw ArgumentError(",
+            "    'Out of scope, not found widget of type ${1}',",
+            "    'out_of_scope',",
+            "  );",
+            "",
+            "/// The state from the closest instance of this class",
+            "/// that encloses the given context.",
+            "/// e.g. `${1}.of(context)`",
+            "static ${1}? of(BuildContext context) =>",
+            "  maybeOf(context) ?? _notFoundStateOfType();${0}\n"
+        ]
+    },
+    "debugFillProperties": {
+        "scope": "flutter, dart",
+        "prefix": "debugFillProperties",
+        "description": "debugFillProperties",
+        "body": [
+            "@override",
+            "void debugFillProperties(DiagnosticPropertiesBuilder properties) =>",
+            "  super.debugFillProperties(",
+            "    properties",
+            "      ..add(",
+            "        StringProperty(",
+            "          'description',",
+            "          'description',",
+            "        ),",
+            "      ),",
+            "  );",
+            ""
+        ]
+    },
+    "InitState ": {
+        "scope": "flutter, dart",
+        "prefix": "initS",
+        "description": "Called when this object is inserted into the tree. The framework will call this method exactly once for each State object it creates.",
+        "body": [
+            "@override",
+            "void initState() {",
+            "  super.initState();",
+            "  ${0:}",
+            "}"
+        ]
+    },
+    "Dispose": {
+        "scope": "flutter, dart",
+        "prefix": "dispose",
+        "body": [
+            "@override",
+            "void dispose() {",
+            "  ${0:}",
+            "  super.dispose();",
+            "}"
+        ],
+        "description": "Called when this object is removed from the tree permanently. The framework calls this method when this State object will never build again."
+    },
+    "Reassemble": {
+        "scope": "flutter, dart",
+        "prefix": "reassemble",
+        "description": "Called whenever the application is reassembled during debugging, for example during hot reload.",
+        "body": [
+            "@override",
+            "void reassemble(){",
+            "  super.reassemble();",
+            "  ${0:}",
+            "}"
+        ]
+    },
+    "didChangeDependencies": {
+        "scope": "flutter, dart",
+        "prefix": "didChangeD",
+        "description": "Called when a dependency of this State object changes",
+        "body": [
+            "@override",
+            "void didChangeDependencies() {",
+            "  super.didChangeDependencies();",
+            "  ${0:}",
+            "}"
+        ]
+    },
+    "didUpdateWidget": {
+        "scope": "flutter, dart",
+        "prefix": "didUpdateW",
+        "description": "Called whenever the widget configuration changes.",
+        "body": [
+            "@override",
+            "void didUpdateWidget (${1:Type} ${2:oldWidget}) {",
+            "  super.didUpdateWidget(${2:oldWidget});",
+            "  ${0:}",
+            "}"
+        ]
+    },
+    "ListView.Builder": {
+        "scope": "flutter, dart",
+        "prefix": "listViewBuilder",
+        "description": "Creates a scrollable, linear array of widgets that are created on demand.Providing a non-null `itemCount` improves the ability of the [ListView] to estimate the maximum scroll extent.",
+        "body": [
+            "ListView.builder(",
+            "  itemCount: ${1:1},",
+            "  itemBuilder: (context, index) =>",
+            "    ${2:const Placeholder()},${0}",
+            "),"
+        ]
+    },
+    "ListView.Separated": {
+        "scope": "flutter, dart",
+        "prefix": "listViewSeparated",
+        "description": "Creates a fixed-length scrollable linear array of list 'items' separated by list item 'separators'.",
+        "body": [
+            "ListView.separated(",
+            "  itemCount: ${1:1},",
+            "  separatorBuilder: (context, index) {",
+            "    return ${2:};",
+            "  },",
+            "  itemBuilder: (context, index) {",
+            "    return ${0:};",
+            "  },",
+            "),"
+        ]
+    },
+    "GridView.Builder": {
+        "scope": "flutter, dart",
+        "prefix": "gridViewBuilder",
+        "description": "Creates a scrollable, 2D array of widgets that are created on demand. Providing a non-null `itemCount` improves the ability of the [GridView] to estimate the maximum scroll extent.",
+        "body": [
+            "GridView.builder(",
+            "  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(",
+            "    crossAxisCount: ${1:2},",
+            "  ),",
+            "  itemCount: ${2:2},",
+            "  itemBuilder: (BuildContext context, int index) {",
+            "    return ${3:};",
+            "  },",
+            "),"
+        ]
+    },
+    "GridView.Count": {
+        "scope": "flutter, dart",
+        "prefix": "gridViewCount",
+        "description": "Creates a scrollable, 2D array of widgets with a fixed number of tiles in the cross axis.",
+        "body": [
+            "GridView.count(",
+            "  crossAxisSpacing: ${1:1},",
+            "  mainAxisSpacing: ${2:2},",
+            "  crossAxisCount: ${3:2},",
+            "  children: <Widget> [",
+            "    ${0:}",
+            "  ],",
+            "),"
+        ]
+    },
+    "GridView.Extent": {
+        "scope": "flutter, dart",
+        "prefix": "gridViewE",
+        "description": "Creates a scrollable, 2D array of widgets with tiles that each have a maximum cross-axis extent.",
+        "body": [
+            "GridView.extent(",
+            "  maxCrossAxisExtent:  ${1:2},",
+            "  children: <Widget> [",
+            "    ${0:}",
+            "  ],",
+            "),"
+        ]
+    },
+    "Custom Scroll View": {
+        "scope": "flutter, dart",
+        "prefix": "customScrollV",
+        "description": "Creates a `ScrollView` that creates custom scroll effects using slivers. If the `primary` argument is true, the `controller` must be null.",
+        "body": [
+            "CustomScrollView(",
+            "  slivers: <Widget>[",
+            "    ${0}",
+            "  ],",
+            "),"
+        ]
+    },
+    "Builder": {
+        "scope": "flutter, dart",
+        "prefix": "builder",
+        "description": "Creates a widget that delegates its build to a callback.",
+        "body": [
+            "Builder(",
+            "  builder: (context)  =>",
+            "    ${0:const Placeholder()},",
+            "),"
+        ]
+    },
+    "Stateful Builder": {
+        "scope": "flutter, dart",
+        "prefix": "statefulBuilder",
+        "description": "Creates a widget that both has state and delegates its build to a callback. Useful for rebuilding specific sections of the widget tree.",
+        "body": [
+            "StatefulBuilder(",
+            "  builder: (context, setState) =>",
+            "    ${0:const Placeholder()},",
+            "),"
+        ]
+    },
+    "Stream Builder": {
+        "scope": "flutter, dart",
+        "prefix": "streamBuilder",
+        "description": "Creates a new `StreamBuilder` that builds itself based on the latest snapshot of interaction with the specified `stream`",
+        "body": [
+            "StreamBuilder<${1:int}>(",
+            "  initialData: ${2:initialData},",
+            "  stream: ${3:stream},",
+            "  builder: (context, snapshot) =>",
+            "    ${0:const Placeholder()},",
+            "),"
+        ]
+    },
+    "Value Listenable Builder": {
+        "scope": "flutter, dart",
+        "prefix": "valueListenableBuilder",
+        "description": "Given a ValueListenable<T> and a builder which builds widgets from concrete values of T, this class will automatically register itself as a listener of the ValueListenable and call the builder with updated values when the value changes.",
+        "body": [
+            "ValueListenableBuilder<${1:int}>(",
+            "  valueListenable: ${2: null},",
+            "  builder: (context, value, child) =>",
+            "    ${0:const Placeholder()},",
+            "  child: ${2:child},",
+            "),"
+        ]
+    },
+    "Animated Builder": {
+        "scope": "flutter, dart",
+        "prefix": "animatedBldr",
+        "description": "Creates an Animated Builder. The widget specified to `child` is passed to the `builder`",
+        "body": [
+            "AnimatedBuilder(",
+            "  animation: ${1:animation},",
+            "  builder: (context, child) =>",
+            "    ${0:const Placeholder()},",
+            "  child: ${2:child},",
+            "),"
+        ]
+    },
+    "Animated Switcher": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "animatedSwitcher",
+            "switcher"
+        ],
+        "description": "Creates an Animated Builder. The widget specified to `child` is passed to the `builder`",
+        "body": [
+            "AnimatedBuilder(",
+            "  animation: ${1:animation},",
+            "  builder: (context, child) =>",
+            "    ${0:const Placeholder()},",
+            "  child: ${2:child},",
+            "),"
+        ]
+    },
+    "Orientation Builder": {
+        "scope": "flutter, dart",
+        "prefix": "orientationBuilder",
+        "description": "Creates a builder which allows for the orientation of the device to be specified and referenced",
+        "body": [
+            "OrientationBuilder(",
+            "  builder: (context, orientation) {",
+            "    return ${0:const Placeholder()};",
+            "  },",
+            "),"
+        ]
+    },
+    "Layout Builder": {
+        "scope": "flutter, dart",
+        "prefix": "layoutBuilder",
+        "description": "Similar to the Builder widget except that the framework calls the builder function at layout time and provides the parent widget's constraints.",
+        "body": [
+            "LayoutBuilder(",
+            "  builder: (context, constraints) {",
+            "    return ${0:const Placeholder()};",
+            "  },",
+            "),"
+        ]
+    },
+    "Repaint boundary": {
+        "scope": "flutter, dart",
+        "prefix": "repaintBoundary",
+        "description": "Creates a widget that isolates repaints.",
+        "body": [
+            "RepaintBoundary(",
+            "  key: ValueKey<String>(${1:name}),",
+            "  child: ${0:const Placeholder()},",
+            "),"
+        ]
+    },
+    "Single Child ScrollView": {
+        "scope": "flutter, dart",
+        "prefix": "singleChildSV",
+        "body": [
+            "SingleChildScrollView(",
+            "  controller: ${1:controller,}",
+            "  child: Column(",
+            "    ${0:}",
+            "  ),",
+            "),"
+        ],
+        "description": "Creates a scroll view with a single child"
+    },
+    "Future Builder": {
+        "scope": "flutter, dart",
+        "prefix": "futureBldr",
+        "body": [
+            "FutureBuilder(",
+            "  future: ${1:Future},",
+            "  initialData: ${2:InitialData},",
+            "  builder: (context, snapshot) {",
+            "    return ${3:};",
+            "  },",
+            "),"
+        ],
+        "description": "Creates a Future Builder. This builds itself based on the latest snapshot of interaction with a Future."
+    },
+    "debugPrint": {
+        "scope": "flutter, dart",
+        "prefix": "debugP",
+        "description": "Prints a message to the console, which you can access using the flutter tool's `logs` command (flutter logs).",
+        "body": [
+            "debugPrint(${1:statement});"
+        ]
+    },
+    "Material App": {
+        "scope": "flutter, dart",
+        "prefix": "mateapp",
+        "description": "Create a MaterialApp",
+        "body": [
+            "import 'dart:async';\n",
+            "import 'package:flutter/material.dart';\n\n",
+            "void main() => runZonedGuarded<Future<void>>(() async {",
+            "      runApp(const App());",
+            "    }, (error, stackTrace) {",
+            "      Error.safeToString(error);",
+            "      stackTrace.toString();",
+            "    });\n",
+            "/// {@template app}",
+            "/// App widget",
+            "/// {@endtemplate}",
+            "class App extends StatelessWidget {",
+            "  /// {@macro app}",
+            "  const App({",
+            "    Key? key,",
+            "  }) : super(key: key);\n",
+            "  @override",
+            "  Widget build(BuildContext context) => MaterialApp(",
+            "        title: 'Material App',",
+            "        home: Scaffold(",
+            "          appBar: AppBar(",
+            "            title: const Text('Material App Bar'),",
+            "          ),",
+            "          body: const SafeArea(",
+            "            child: Center(",
+            "              child: Text('Hello World'),",
+            "            ),",
+            "          ),",
+            "        ),",
+            "      );",
+            "} // App\n",            
+        ]
+    },
+    "Cupertino App": {
+        "scope": "flutter, dart",
+        "prefix": "cupeapp",
+        "description": "Create a CupertinoApp",
+        "body": [
+            "import 'dart:async';\n",
+            "import 'package:flutter/cupertino.dart';\n\n",
+            "void main() => runZonedGuarded<Future<void>>(() async {",
+            "      runApp(const App());",
+            "    }, (error, stackTrace) {",
+            "      Error.safeToString(error);",
+            "      stackTrace.toString();",
+            "    });\n",
+            "/// {@template app}",
+            "/// App widget",
+            "/// {@endtemplate}",
+            "class App extends StatelessWidget {",
+            "  /// {@macro app}",
+            "  const App({",
+            "    Key? key,",
+            "  }) : super(key: key);\n",
+            "  @override",
+            "  Widget build(BuildContext context) => const CupertinoApp(",
+            "        title: 'Cupertino App',",
+            "        home: CupertinoPageScaffold(",
+            "          navigationBar: CupertinoNavigationBar(",
+            "            middle: Text('Cupertino App Bar'),",
+            "          ),",
+            "          child: SafeArea(",
+            "            child: Center(",
+            "              child: Text('Hello World'),",
+            "            ),",
+            "          ),",
+            "        ),",
+            "      );",
+            "} // App\n",
+        ]
+    },
+    "Tween Animation Builder": {
+        "scope": "flutter, dart",
+        "prefix": "tweenAnimationBuilder",
+        "body": [
+            "TweenAnimationBuilder<${3:Object?}>(",
+            "  duration: ${1:const Duration(),}",
+            "  tween: ${2:Tween(),}",
+            "  builder: (context, value, child) =>",
+            "    ${4:const Placeholder();},",
+            "),"
+        ],
+        "description": "Widget builder that animates a property of a Widget to a target value whenever the target value changes."
+    },
+    "Test Widgets": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "testWidget",
+            "widgetTest"
+        ],
+        "body": [
+            "testWidgets(",
+            "  \"${1:test description}\",",
+            "  (tester) async {",
+            "    ${0}",
+            "  },",
+            ");"
+        ],
+        "description": "Create a testWidgets function"
+    },
+    "Material Package": {
+        "scope": "flutter, dart",
+        "prefix": "import_material",
+        "body": "import 'package:flutter/material.dart';",
+        "description": "Import flutter material package"
+    },
+    "Cupertino Package": {
+        "scope": "flutter, dart",
+        "prefix": "import_cupertino",
+        "body": "import 'package:flutter/cupertino.dart';",
+        "description": "Import Flutter Cupertino package"
+    },
+    "flutter_test Package": {
+        "scope": "flutter, dart",
+        "prefix": "import_flutter_test",
+        "body": "import 'package:flutter_test/flutter_test.dart';",
+        "description": "Import flutter_test package"
+    }
+}
