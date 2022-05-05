@@ -188,6 +188,96 @@
             "} // ${1}Controller\n",
         ]
     },
+    "Scope Widget": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "scope",
+            "statefulScope"
+        ],
+        "description": "Snippet for Scope Widget",
+        "body": [
+            "import 'package:flutter/widgets.dart';\n",
+            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}_controller}\",",
+            "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} controller for ${1} widget\",",
+            "/// {@endtemplate}\",",
+            "abstract class ${1}Controller {",
+            "  // --- Controller --- //",
+            "} // I${1}Controller\n",
+            "/// {@template $TM_FILENAME_BASE.${2}}",
+            "/// ${1} widget",
+            "/// {@endtemplate}",
+            "class ${1} extends StatefulWidget {",
+            "  /// {@macro $TM_FILENAME_BASE.${2}}",
+            "  const ${1}({",
+            "    required this.child,",
+            "    Key? key,",
+            "  }) : super(key: key);\n",
+            "  /// The widget below this widget in the tree.",
+            "  final Widget child;\n",
+            "  /// The state from the closest instance of this class",
+            "  /// that encloses the given context, if any.",
+            "  /// e.g. `${1}.maybeOf(context)`",
+            "  static ${1}Controller? maybeOf(BuildContext context) {",
+            "    final inhW = context.getElementForInheritedWidgetOfExactType<_Inherited${1}>()?.widget;",
+            "    return inhW is _Inherited${1} ? inhW.controller : null;",
+            "  }\n",
+            "  static Never _notFoundInheritedWidgetOfExactType() => throw ArgumentError(",
+            "        'Out of scope, not found inherited widget '",
+            "            'a _Inherited${1} of the exact type',",
+            "        'out_of_scope',",
+            "      );\n",
+            "  /// The state from the closest instance of this class",
+            "  /// that encloses the given context.",
+            "  /// e.g. `${1}.of(context)`",
+            "  static ${1}Controller of(BuildContext context) =>",
+            "      maybeOf(context) ?? _notFoundInheritedWidgetOfExactType();\n",
+            "  @override",
+            "  State<${1}> createState() => _${1}State();",
+            "} // ${1}\n",
+            "/// State for widget ${1}",
+            "class _${1}State extends State<${1}> implements ${1}Controller {",
+            "  /* #region Lifecycle */",
+            "  @override",
+            "  void initState() {",
+            "    super.initState();",
+            "    // Initial state initialization",
+            "  }\n",
+            "  @override",
+            "  void didUpdateWidget(${1} oldWidget) {",
+            "    super.didUpdateWidget(oldWidget);",
+            "    // Widget configuration changed",
+            "  }\n",
+            "  @override",
+            "  void didChangeDependencies() {",
+            "    super.didChangeDependencies();",
+            "    // The configuration of InheritedWidgets has changed",
+            "    // Also called after initState but before build",
+            "  }\n",
+            "  @override",
+            "  void dispose() {",
+            "    // Permanent removal of a tree stent",
+            "    super.dispose();",
+            "  }\n",
+            "  /* #endregion */\n",
+            "  @override",
+            "  Widget build(BuildContext context) => _Inherited${1}(",
+            "        controller: this,",
+            "        child: widget.child,",
+            "      );",
+            "} // _${1}State\n",
+            "/// Inherited widget for quick access in the element tree",
+            "class _Inherited${1} extends InheritedWidget {",
+            "  const _Inherited${1}({",
+            "    required this.controller,",
+            "    required Widget child,",
+            "    Key? key,",
+            "  }) : super(key: key, child: child);\n",
+            "  final ${1}Controller controller;\n",
+            "  @override",
+            "  bool updateShouldNotify(_Inherited${1} oldWidget) => false;",
+            "} // _Inherited${1}\n"
+        ]
+    },
     "Stateful Widget with animation": {
         "scope": "flutter, dart",
         "prefix": [
@@ -507,7 +597,7 @@
             "/// The state from the closest instance of this class",
             "/// that encloses the given context.",
             "/// e.g. `${1}.of(context)`",
-            "static ${1}? of(BuildContext context, {bool listen = true}) =>",
+            "static ${1} of(BuildContext context, {bool listen = true}) =>",
             "  maybeOf(context, listen: listen) ?? _notFoundInheritedWidgetOfExactType();${0}\n"
         ]
     },
@@ -907,6 +997,23 @@
             "} // App\n",            
         ]
     },
+    "Scaffold": {
+        "scope": "flutter, dart",
+        "prefix": "scaffold",
+        "description": "Create a Scaffold",
+        "body": [
+            "Scaffold(",
+            "  appBar: AppBar(",
+            "    title: const Text('TITLE'),",
+            "  ),",
+            "  body: SafeArea(",
+            "    child: Center(",
+            "      child: Placeholder(),",
+            "    ),",
+            "  ),",
+            ");"
+        ]
+    },
     "Cupertino App": {
         "scope": "flutter, dart",
         "prefix": "cupeapp",
@@ -964,6 +1071,7 @@
             "testWidget",
             "widgetTest"
         ],
+        "description": "Create a testWidgets function",
         "body": [
             "testWidgets(",
             "  \"${1:test description}\",",
@@ -971,25 +1079,41 @@
             "    ${0}",
             "  },",
             ");"
-        ],
-        "description": "Create a testWidgets function"
+        ]
     },
     "Material Package": {
         "scope": "flutter, dart",
         "prefix": "import_material",
-        "body": "import 'package:flutter/material.dart';",
-        "description": "Import flutter material package"
+        "description": "Import flutter material package",
+        "body": "import 'package:flutter/material.dart';"
     },
     "Cupertino Package": {
         "scope": "flutter, dart",
         "prefix": "import_cupertino",
-        "body": "import 'package:flutter/cupertino.dart';",
-        "description": "Import Flutter Cupertino package"
+        "description": "Import Flutter Cupertino package",
+        "body": "import 'package:flutter/cupertino.dart';"
     },
     "flutter_test Package": {
         "scope": "flutter, dart",
+        "description": "Import flutter_test package",
         "prefix": "import_flutter_test",
-        "body": "import 'package:flutter_test/flutter_test.dart';",
-        "description": "Import flutter_test package"
+        "body": "import 'package:flutter_test/flutter_test.dart';"
+    },
+    "GoRouteData": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "goRouteData"
+        ],
+        "description": "GoRouteData",
+        "body": [
+            "/// ${1}Route",
+            "@internal",
+            "class ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}}Route extends GoRouteData {",
+            "  ${1}Route();",
+            "",
+            "  @override",
+            "  Widget build(BuildContext context) => const ${1}Screen();",
+            "}\n"
+        ]
     }
 }
