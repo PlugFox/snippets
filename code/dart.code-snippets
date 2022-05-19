@@ -165,7 +165,7 @@
         ],
         "description": "Creates a new dartdoc template with current file's name as its prefix",
         "body": [
-          "/// {@template $TM_FILENAME_BASE.${1}}",
+          "/// {@template ${1}}",
           "/// $0",
           "/// {@endtemplate}"
         ]
@@ -202,11 +202,11 @@
         "prefix": "class",
         "description": "Create new class",
         "body": [
-            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}}",
+            "/// {@template ${2:$TM_FILENAME_BASE}}",
             "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} class",
             "/// {@endtemplate}",
             "class ${1} {",
-            "  /// {@macro $TM_FILENAME_BASE.${2}}",
+            "  /// {@macro ${2}}",
             "  const ${1}($0);",
             "  ",
             "} // ${1}\n"
@@ -222,13 +222,13 @@
         "description": "Create new class",
         "body": [
             "import 'package:meta/meta.dart';\n\n",
-            "/// {@template $TM_FILENAME_BASE.${2:$TM_FILENAME_BASE}}",
+            "/// {@template ${2:$TM_FILENAME_BASE}}",
             "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} entity",
             "/// {@endtemplate}",
             "@immutable",
             "// ignore: prefer_mixin",
             "class ${1} with Comparable<${1}> {",
-            "  /// {@macro $TM_FILENAME_BASE.${2}}",
+            "  /// {@macro ${2}}",
             "  ${1}({",
             "    required this.id,",
             "    required this.title,",
@@ -314,7 +314,7 @@
         "body": [
             "import 'dart:collection';\n",
             "import 'package:meta/meta.dart';\n\n",
-            "/// {@template $TM_FILENAME_BASE.${3:$TM_FILENAME_BASE}}",
+            "/// {@template ${3:$TM_FILENAME_BASE}}",
             "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} immutable collection.",
             "/// Creates an unmodifiable list backed by source.",
             "///",
@@ -417,6 +417,42 @@
         "description": "Import mocks file",
         "body": [
             "import '${TM_FILENAME_BASE}.mocks.dart';$0"
+        ]
+    },
+    "Sign": {
+        "scope": "flutter, dart",
+        "prefix": "sign",
+        "description": "Insert my sign",
+        "body": [
+            "${BLOCK_COMMENT_START}",
+            " * $0",
+            " * Matiunin Mikhail <plugfox@gmail.com>, ${CURRENT_DATE} ${CURRENT_MONTH_NAME} ${CURRENT_YEAR}",
+            " ${BLOCK_COMMENT_END}"
+        ]
+    },
+    "Dart Pad": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "pad",
+            "dartPad",
+        ],
+        "description": "Insert my sign for dart pad",
+        "body": [
+            "${BLOCK_COMMENT_START}",
+            " * $0",
+            " * https://gist.github.com/PlugFox/${1}",
+            " * https://dartpad.dev/${1}",
+            " * Matiunin Mikhail <plugfox@gmail.com>, ${CURRENT_DATE} ${CURRENT_MONTH_NAME} ${CURRENT_YEAR}",
+            " ${BLOCK_COMMENT_END}"
+        ]
+    },
+    "ToDo": {
+        "scope": "flutter, dart",
+        "prefix": "todo",
+        "description": "ToDo block",
+        "body": [
+            "${LINE_COMMENT} TODO: $0",
+            "${LINE_COMMENT} Matiunin Mikhail <plugfox@gmail.com>, ${CURRENT_DATE} ${CURRENT_MONTH_NAME} ${CURRENT_YEAR}"
         ]
     },
     "Hash Code": {
@@ -1103,6 +1139,39 @@
             "        Timer(duration, resume);",
             "      };",
             "} // end of ${1}\n"
+        ]
+    },
+    "MIT License": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "mit",
+            "license"
+        ],
+        "description": "MIT License",
+        "body": [
+            "/*",
+            " * MIT License",
+            " *",
+            " * Copyright (c) ${CURRENT_YEAR} Matiunin Mikhail <plugfox@gmail.com>",
+            " *",
+            " * Permission is hereby granted, free of charge, to any person obtaining a copy",
+            " * of this software and associated documentation files (the \"Software\"), to deal",
+            " * in the Software without restriction, including without limitation the rights",
+            " * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell",
+            " * copies of the Software, and to permit persons to whom the Software is",
+            " * furnished to do so, subject to the following conditions:",
+            " *",
+            " * The above copyright notice and this permission notice shall be included in",
+            " * all copies or substantial portions of the Software.",
+            " * ",
+            " * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR",
+            " * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,",
+            " * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE",
+            " * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER",
+            " * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,",
+            " * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE",
+            " * SOFTWARE.",
+            " */\n"
         ]
     },
     "No Such Method": {
