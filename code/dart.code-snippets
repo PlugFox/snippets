@@ -9,8 +9,9 @@
             "void main([List<String>? args]) => runZonedGuarded<Future<void>>(() async {",
             "      ${0:// ...}",
             "    }, (error, stackTrace) {",
-            "      Error.safeToString(error);",
-            "      stackTrace.toString();",
+            "      //Error.safeToString(error);",
+            "      //stackTrace.toString();",
+            "      print('Error: $error, stackTrace: $stackTrace');",
             "    });\n"
         ]
     },
