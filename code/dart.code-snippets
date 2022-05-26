@@ -420,42 +420,6 @@
             "import '${TM_FILENAME_BASE}.mocks.dart';$0"
         ]
     },
-    "Sign": {
-        "scope": "flutter, dart",
-        "prefix": "sign",
-        "description": "Insert my sign",
-        "body": [
-            "${BLOCK_COMMENT_START}",
-            " * $0",
-            " * Matiunin Mikhail <plugfox@gmail.com>, ${CURRENT_DATE} ${CURRENT_MONTH_NAME} ${CURRENT_YEAR}",
-            " ${BLOCK_COMMENT_END}"
-        ]
-    },
-    "Dart Pad": {
-        "scope": "flutter, dart",
-        "prefix": [
-            "pad",
-            "dartPad",
-        ],
-        "description": "Insert my sign for dart pad",
-        "body": [
-            "${BLOCK_COMMENT_START}",
-            " * $0",
-            " * https://gist.github.com/PlugFox/${1}",
-            " * https://dartpad.dev/${1}",
-            " * Matiunin Mikhail <plugfox@gmail.com>, ${CURRENT_DATE} ${CURRENT_MONTH_NAME} ${CURRENT_YEAR}",
-            " ${BLOCK_COMMENT_END}"
-        ]
-    },
-    "ToDo": {
-        "scope": "flutter, dart",
-        "prefix": "todo",
-        "description": "ToDo block",
-        "body": [
-            "${LINE_COMMENT} TODO: $0",
-            "${LINE_COMMENT} Matiunin Mikhail <plugfox@gmail.com>, ${CURRENT_DATE} ${CURRENT_MONTH_NAME} ${CURRENT_YEAR}"
-        ]
-    },
     "Hash Code": {
         "scope": "flutter, dart",
         "prefix": [
@@ -565,7 +529,7 @@
             "      //final newData = await _repository.();",
             "      emit(${1}State.successful(data: newData));",
             "    } on Object catch (err, stackTrace) {",
-            "      l.e('В ${1}BLoC произошла ошибка: \\$err', stackTrace);",
+            "      l.e('An error occurred in the ${1}BLoC: \\$err', stackTrace);",
             "      emit(${1}State.error(data: state.data));",
             "      rethrow;",
             "    } finally {",
@@ -580,7 +544,7 @@
             "      //final newData = await _repository.();",
             "      emit(${1}State.successful(data: newData));",
             "    } on Object catch (err, stackTrace) {",
-            "      l.e('В ${1}BLoC произошла ошибка: \\$err', stackTrace);",
+            "      l.e('An error occurred in the ${1}BLoC: \\$err', stackTrace);",
             "      emit(${1}State.error(data: state.data));",
             "      rethrow;",
             "    } finally {",
@@ -595,7 +559,7 @@
             "      //final newData = await _repository.();",
             "      emit(${1}State.successful(data: newData));",
             "    } on Object catch (err, stackTrace) {",
-            "      l.e('В ${1}BLoC произошла ошибка: \\$err', stackTrace);",
+            "      l.e('An error occurred in the ${1}BLoC: \\$err', stackTrace);",
             "      emit(${1}State.error(data: state.data));",
             "      rethrow;",
             "    } finally {",
@@ -610,7 +574,7 @@
             "      //final newData = await _repository.();",
             "      emit(${1}State.successful(data: newData));",
             "    } on Object catch (err, stackTrace) {",
-            "      l.e('В ${1}BLoC произошла ошибка: \\$err', stackTrace);",
+            "      l.e('An error occurred in the ${1}BLoC: \\$err', stackTrace);",
             "      emit(${1}State.error(data: state.data));",
             "      rethrow;",
             "    } finally {",
@@ -730,7 +694,7 @@
             "      //final newData = await _repository.();",
             "      emit(event.successful(state: state, newData: newData));",
             "    } on Object catch (err, stackTrace) {",
-            "      l.e('В ${1}BLoC произошла ошибка: \\$err', stackTrace);",
+            "      l.e('An error occurred in the ${1}BLoC: \\$err', stackTrace);",
             "      emit(event.error(state: state, message: 'An error occurred'));",
             "      rethrow;",
             "    } finally {",
@@ -745,7 +709,7 @@
             "      //final newData = await _repository.();",
             "      emit(event.successful(state: state, newData: newData));",
             "    } on Object catch (err, stackTrace) {",
-            "      l.e('В ${1}BLoC произошла ошибка: \\$err', stackTrace);",
+            "      l.e('An error occurred in the ${1}BLoC: \\$err', stackTrace);",
             "      emit(event.error(state: state, message: 'An error occurred'));",
             "      rethrow;",
             "    } finally {",
@@ -760,7 +724,7 @@
             "      //final newData = await _repository.();",
             "      emit(event.successful(state: state, newData: newData));",
             "    } on Object catch (err, stackTrace) {",
-            "      l.e('В ${1}BLoC произошла ошибка: \\$err', stackTrace);",
+            "      l.e('An error occurred in the ${1}BLoC: \\$err', stackTrace);",
             "      emit(event.error(state: state, message: 'An error occurred'));",
             "      rethrow;",
             "    } finally {",
@@ -775,7 +739,7 @@
             "      //final newData = await _repository.();",
             "      emit(event.successful(state: state, newData: newData));",
             "    } on Object catch (err, stackTrace) {",
-            "      l.e('В ${1}BLoC произошла ошибка: \\$err', stackTrace);",
+            "      l.e('An error occurred in the ${1}BLoC: \\$err', stackTrace);",
             "      emit(event.error(state: state, message: 'An error occurred'));",
             "      rethrow;",
             "    } finally {",
@@ -819,7 +783,7 @@
             "",
             "/// Выпуск состояния ошибки",
             "mixin _ErrorStateEmitter on ${1}Event {",
-            "  /// Произошла ошибка",
+            "  /// An error occurred",
             "  ${1}State error({",
             "    required final ${1}State state,",
             "    final String? message,",
@@ -1140,39 +1104,6 @@
             "        Timer(duration, resume);",
             "      };",
             "} // end of ${1}\n"
-        ]
-    },
-    "MIT License": {
-        "scope": "flutter, dart",
-        "prefix": [
-            "mit",
-            "license"
-        ],
-        "description": "MIT License",
-        "body": [
-            "/*",
-            " * MIT License",
-            " *",
-            " * Copyright (c) ${CURRENT_YEAR} Matiunin Mikhail <plugfox@gmail.com>",
-            " *",
-            " * Permission is hereby granted, free of charge, to any person obtaining a copy",
-            " * of this software and associated documentation files (the \"Software\"), to deal",
-            " * in the Software without restriction, including without limitation the rights",
-            " * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell",
-            " * copies of the Software, and to permit persons to whom the Software is",
-            " * furnished to do so, subject to the following conditions:",
-            " *",
-            " * The above copyright notice and this permission notice shall be included in",
-            " * all copies or substantial portions of the Software.",
-            " * ",
-            " * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR",
-            " * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,",
-            " * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE",
-            " * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER",
-            " * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,",
-            " * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE",
-            " * SOFTWARE.",
-            " */\n"
         ]
     },
     "No Such Method": {
