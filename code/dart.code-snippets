@@ -1215,10 +1215,7 @@
             "pragma"
         ],
         "description": "Pragma annotation",
-        "body": [
-            //"   @nodoc {@category } {@subCategory } /// ${1|,,,|}\n"
-            "@pragma(${1|'vm:entry-point','vm:prefer-inline','dart2js:tryInline'|})"
-        ]
+        "body": "@pragma(${1|'vm:entry-point','vm:prefer-inline','dart2js:tryInline'|})"
     },
     "Dart doc disable documentation": {
         "scope": "flutter, dart",
