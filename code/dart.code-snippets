@@ -157,29 +157,6 @@
             "  "
         ]
     },
-    "New dartdoc template": {
-        "scope": "flutter, dart",
-        "prefix": [
-            "dartdoc_create_template",
-            "new_dartdoc_template",
-            "newtmpl",
-        ],
-        "description": "Creates a new dartdoc template with current file's name as its prefix",
-        "body": [
-          "/// {@template ${1}}",
-          "/// $0",
-          "/// {@endtemplate}"
-        ]
-    },
-    "Dartdoc macro": {
-        "scope": "flutter, dart",
-        "prefix": [
-            "dartdoc_use_template",
-            "usetmpl"
-        ],
-        "description": "Uses existing dartdoc macro with current file's name as its prefix",
-        "body": "/// {@macro $TM_FILENAME_BASE.$0}"
-    },
     "Comment": {
         "scope": "flutter, dart",
         "prefix": [
@@ -1230,5 +1207,131 @@
             "  ${0:expect(true, isTrue);}",
             "});\n",
         ]
+    },
+    "Pragma": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "@pragma",
+            "pragma"
+        ],
+        "description": "Pragma annotation",
+        "body": [
+            //"   @nodoc {@category } {@subCategory } /// ${1|,,,|}\n"
+            "@pragma(${1|'vm:entry-point','vm:prefer-inline','dart2js:tryInline'|})"
+        ]
+    },
+    "Dart doc disable documentation": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "doc-disabled",
+            "nodoc",
+            "@nodoc",
+            "@doc-disabled"
+        ],
+        "description": "No documentation annotation",
+        "body": [
+            "/// {@nodoc}"
+        ]
+    },
+    "Dart doc category": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "doc-category",
+            "dartdoc-category",
+            "@doc-category"
+        ],
+        "description": "Add category to documentation",
+        "body": [
+            "/// {@${1|category,subCategory|} ${0}}"
+        ]
+    },
+    "Dart doc image": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "doc-image",
+            "dartdoc-image",
+            "@doc-image"
+        ],
+        "description": "Add image to documentation",
+        "body": [
+            "/// {@image <image alt='' src='${0:https://host.tld/path/to/image.png}'>}"
+        ]
+    },
+    "Dart doc animation": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "doc-animation",
+            "dartdoc-animation",
+            "@doc-animation"
+        ],
+        "description": "Add animation to documentation",
+        "body": "/// {@animation name 100 200 ${0:https://host.tld/path/to/video.mp4}}"
+    },
+    "Dartdoc new template": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "@template",
+            "template",
+            "dartdoc-new-template",
+            "doc-new-macro",
+            "newtmpl",
+            "@doc-template"
+        ],
+        "description": "Creates a new dartdoc template with current file's name as its prefix",
+        "body": [
+          "/// {@template ${1:$TM_FILENAME_BASE}}",
+          "/// ${0:Body of the template}",
+          "/// {@endtemplate}"
+        ]
+    },
+    "Dartdoc use macro": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "@macro",
+            "macro",
+            "dartdoc-use-template",
+            "doc-use-macro",
+            "usetmpl",
+            "@doc-macro"
+        ],
+        "description": "Uses existing dartdoc macro with current file's name as its prefix",
+        "body": "/// {@macro ${0:$TM_FILENAME_BASE}}"
+    },
+    "Dartdoc inject html": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "@inject-html",
+            "inject-html",
+            "dartdoc-html",
+            "doc-html",
+            "html",
+            "@doc-html"
+        ],
+        "description": "Injects html into the current comment",
+        "body": [
+            "/// {@inject-html}",
+            "/// ${0:<p>[The HTML to inject.]()</p>}",
+            "/// {@end-inject-html}"
+        ]
+    },
+    "Deprecated": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "@deprecated",
+            "deprecated"
+        ],
+        "description": "Deprecated",
+        "body": "@Deprecated('${0:Reason}')"
+    },
+    "Meta": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "@meta",
+            "meta",
+            "@annotation",
+            "annotation"
+        ],
+        "description": "Meta annotation",
+        "body": "@${1|immutable,useResult,internal,protected,literal,mustCallSuper,sealed,alwaysThrows,factory,visibleForOverriding,visibleForTesting,experimental,nonVirtual,doNotStore,optionalTypeArgs|}"
     }
 }
