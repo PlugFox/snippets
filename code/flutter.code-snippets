@@ -13,9 +13,7 @@
             "/// {@endtemplate}",
             "class $1 extends StatelessWidget {",
             "  /// {@macro $2}",
-            "  const $1({",
-            "    super.key,",
-            "  });",
+            "  const $1({super.key});",
             "  ",
             "  @override",
             "  Widget build(BuildContext context) =>",
@@ -66,9 +64,7 @@
             "/// {@endtemplate}",
             "class ${1} extends StatefulWidget {",
             "  /// {@macro $2}",
-            "  const ${1}({",
-            "    super.key,",
-            "  });",
+            "  const ${1}({super.key});",
             "  ",
             "  /// The state from the closest instance of this class",
             "  /// that encloses the given context, if any.",
@@ -1116,5 +1112,5 @@
             "  Widget build(BuildContext context) => const ${1}Screen();",
             "}\n"
         ]
-    },
+    }
 }
