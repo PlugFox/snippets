@@ -197,7 +197,7 @@
             "  const ${1}(this.value);${0}",
             "",
             "  /// Creates a new instance of [${1}] from a given string.",
-            "  static ${1}? fromValue(String? value) {",
+            "  static ${1} fromValue(String? value, {${1}? fallback}) {",
             "    switch (value) {",
             "      case '${3}':",
             "        return ${3};",
@@ -206,7 +206,7 @@
             "      case '${5}':",
             "        return ${5};",
             "      default:",
-            "        return null;",
+            "        return fallback ?? (throw ArgumentError.value(value));",
             "    }",
             "  }",
             "",
@@ -392,11 +392,11 @@
             "/// {@endtemplate}",
             "@immutable",
             "class ${1} extends IterableBase<${2:T}> {",
-            "  /// {@macro iterable.${3}}",
+            "  /// {@macro ${3}}",
             "  ${1}(Iterable<${2}> source)",
             "      : _source = List<${2}>.of(source, growable: false);",
             "",
-            "  /// {@macro iterable.${3}}",
+            "  /// {@macro ${3}}",
             "  /// Empty collection",
             "  const ${1}.empty() : _source = const Iterable.empty();",
             "",
@@ -1289,9 +1289,9 @@
         ],
         "description": "Creates a new dartdoc template with current file's name as its prefix",
         "body": [
-          "/// {@template ${1:$TM_FILENAME_BASE}}",
-          "/// ${0:Body of the template}",
-          "/// {@endtemplate}"
+            "/// {@template ${1:$TM_FILENAME_BASE}}",
+            "/// ${0:Body of the template}",
+            "/// {@endtemplate}"
         ]
     },
     "Dartdoc use macro": {
