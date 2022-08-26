@@ -276,7 +276,7 @@
             "  /// {@macro ${2}}",
             "  const ${1}($0);",
             "  ",
-            "} // ${1}\n"
+            "}\n"
         ]
     },
     "Data class": {
@@ -370,7 +370,7 @@
             "  @override",
             "  String toString() => '${1}#\\$id';",
             "",
-            "} // ${1}\n"
+            "}\n"
         ]
     },
     "Immutable collection data class": {
@@ -453,7 +453,7 @@
             "  /// Returns the element at the given [index] in the list",
             "  ///  or throws an [RangeError]",
             "  ${2} operator [](int index) => _source.elementAt(index);",
-            "} // ${1}\n"
+            "}\n"
         ]
     },
     "Reverse bypass": {
@@ -1024,7 +1024,7 @@
             "          handleDone: handleDone,",
             "        ),",
             "      );",
-            "} // end of ${1}X extension\n",
+            "}\n",
             "/// {@template ${2:$TM_FILENAME_BASE}}",
             "/// ${1} stream transformer",
             "/// {@endtemplate}",
@@ -1108,7 +1108,7 @@
             "          return Future<void>.value();",
             "        }",
             "      };",
-            "} // end of ${1}\n"
+            "}\n"
         ]
     },
     "StreamTransformer with control queue delay": {
@@ -1127,7 +1127,7 @@
             "  /// {@macro ${2}}",
             "  Stream<T> ${1/(.)(.*)/${1:/downcase}$2/g}(Duration duration) =>",
             "      transform<T>(${1}<T>(duration));",
-            "} // end of ${1}X extension\n",
+            "}\n",
             "/// {@template ${2:$TM_FILENAME_BASE}}",
             "/// ${1} stream transformer",
             "/// {@endtemplate}",
@@ -1182,7 +1182,7 @@
             "        pause();",
             "        Timer(duration, resume);",
             "      };",
-            "} // end of ${1}\n"
+            "}\n"
         ]
     },
     "No Such Method": {

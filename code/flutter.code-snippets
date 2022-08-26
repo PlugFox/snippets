@@ -18,7 +18,7 @@
             "  @override",
             "  Widget build(BuildContext context) =>",
             "    const Placeholder();${0}",
-            "} // $1\n"
+            "}\n"
         ]
     },
     "Stateless Widget with child": {
@@ -46,7 +46,7 @@
             "  @override",
             "  Widget build(BuildContext context) =>",
             "    child;${0}",
-            "} // $1\n"
+            "}\n"
         ]
     },
     "Stateful Widget": {
@@ -74,7 +74,7 @@
             "  ",
             "  @override",
             "  State<${1}> createState() => _${1}State();",
-            "} // $1",
+            "}\n",
             "",
             "/// State for widget ${1}",
             "class _${1}State extends State<${1}> {",
@@ -109,7 +109,7 @@
             "  @override",
             "  Widget build(BuildContext context) =>",
             "    const Placeholder();${0}",
-            "} // _${1}State\n"
+            "}\n"
         ]
     },
     "Stateful Widget with child": {
@@ -142,7 +142,7 @@
             "  ",
             "  @override",
             "  State<${1}> createState() => _${1}State();",
-            "} // $1",
+            "}\n",
             "",
             "/// State for widget ${1}",
             "class _${1}State extends State<${1}> with ${1}Controller {",
@@ -177,11 +177,11 @@
             "  @override",
             "  Widget build(BuildContext context) =>",
             "    widget.child;",
-            "} // _${1}State\n",
+            "}\n",
             "/// Controller for widget ${1}",
             "mixin ${1}Controller {",
             "  ${0}",
-            "} // ${1}Controller\n",
+            "}\n",
         ]
     },
     "Scope Widget": {
@@ -198,7 +198,7 @@
             "/// {@endtemplate}\",",
             "abstract class ${1}Controller {",
             "  // --- Controller --- //",
-            "} // I${1}Controller\n",
+            "}\n",
             "/// {@template ${2}}",
             "/// ${1} widget",
             "/// {@endtemplate}",
@@ -229,7 +229,7 @@
             "      maybeOf(context) ?? _notFoundInheritedWidgetOfExactType();\n",
             "  @override",
             "  State<${1}> createState() => _${1}State();",
-            "} // ${1}\n",
+            "}\n",
             "/// State for widget ${1}",
             "class _${1}State extends State<${1}> implements ${1}Controller {",
             "  /* #region Lifecycle */",
@@ -260,7 +260,7 @@
             "        controller: this,",
             "        child: widget.child,",
             "      );",
-            "} // _${1}State\n",
+            "}\n",
             "/// Inherited widget for quick access in the element tree",
             "class _Inherited${1} extends InheritedWidget {",
             "  const _Inherited${1}({",
@@ -271,7 +271,7 @@
             "  final ${1}Controller controller;\n",
             "  @override",
             "  bool updateShouldNotify(_Inherited${1} oldWidget) => false;",
-            "} // _Inherited${1}\n"
+            "}\n"
         ]
     },
     "Stateful Widget with animation": {
@@ -310,7 +310,7 @@
             "  ",
             "  @override",
             "  State<${1}> createState() => _${1}State();",
-            "} // $1",
+            "}\n",
             "",
             "/// State for widget ${1}",
             "class _${1}State extends State<${1}> with",
@@ -383,11 +383,11 @@
             "  @override",
             "  Widget build(BuildContext context) =>",
             "    widget.child;",
-            "} // _${1}State\n",
+            "}\n",
             "/// Controller for widget ${1}",
             "mixin ${1}Controller {",
             "  ${0}",
-            "} // ${1}Controller\n",
+            "}\n",
         ]
     },
     "Inherited Widget": {
@@ -412,7 +412,7 @@
             "  @override",
             "  bool updateShouldNotify(${1} oldWidget) =>",
             "    false;${0}",
-            "} // ${1}\n"
+            "}\n"
         ]
     },
     "Inherited Notifier": {
@@ -438,7 +438,7 @@
             "  @override",
             "  bool updateShouldNotify(${1} oldWidget) =>",
             "    false;${0}",
-            "} // ${1}\n"
+            "}\n"
         ]
     },
     "Inherited Model": {
@@ -482,7 +482,7 @@
             "    }",
             "    return false;",
             "  }",
-            "} // ${1}\n"
+            "}\n"
         ]
     },
     "Build Method": {
@@ -535,7 +535,7 @@
             "",
             "  @override",
             "  bool shouldRebuildSemantics(${1}Painter oldDelegate) => false;",
-            "} // ${1}\n"
+            "}\n"
         ]
     },
     "Custom Clipper ": {
@@ -560,7 +560,7 @@
             "",
             "  @override",
             "  bool shouldReclip(${1}Clipper oldClipper) => false;",
-            "} // ${1}\n"
+            "}\n"
         ]
     },
     "of": {
@@ -1006,7 +1006,7 @@
             "          ),",
             "        ),",
             "      );",
-            "} // App\n",
+            "}\n",
         ]
     },
     "Scaffold": {
@@ -1063,7 +1063,7 @@
             "          ),",
             "        ),",
             "      );",
-            "} // App\n",
+            "}\n",
         ]
     },
     "Tween Animation Builder": {
