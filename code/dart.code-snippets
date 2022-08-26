@@ -573,7 +573,7 @@
             "  /// Is in idle state",
             "  bool get isIdling => !isProcessing;\n",
             "  /// Is in progress state",
-            "  bool get isProcessing => maybeMap<bool>(orElse: () => true, idle: (_) => false);\n",
+            "  bool get isProcessing => maybeMap<bool>(orElse: () => false, processing: (_) => true);\n",
             "}\n"
         ]
     },

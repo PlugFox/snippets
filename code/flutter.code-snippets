@@ -819,6 +819,19 @@
             "),"
         ]
     },
+    "Wrap with Builder": {
+        "scope": "flutter, dart",
+        "prefix": [
+            "wrapWithBuilder"
+        ],
+        "description": "Wrap a widget with Builder widget.",
+        "body": [
+            "Builder(",
+            "  builder: (context)  =>",
+            "    ${TM_SELECTED_TEXT},",
+            ")"
+        ]
+    },
     "Stateful Builder": {
         "scope": "flutter, dart",
         "prefix": "statefulBuilder",
@@ -960,13 +973,14 @@
         "prefix": "mateapp",
         "description": "Create a MaterialApp",
         "body": [
-            "import 'dart:async';\n",
+            "import 'dart:async';",
+            "import 'dart:developer';\n",
             "import 'package:flutter/material.dart';\n\n",
             "void main() => runZonedGuarded<Future<void>>(() async {",
             "      runApp(const App());",
             "    }, (error, stackTrace) => log(",
             "         'Top level exception',",
-            "         error: error",
+            "         error: error,",
             "         stackTrace: stackTrace,",
             "         level: 1000,",
             "         name: 'main',",
