@@ -125,35 +125,41 @@
     },
     "Changelog unreleased": {
         "scope": "md, markdown",
-        "prefix": "changelog_unreleased",
+        "prefix": [
+            "changelog_unreleased",
+            "unreleased"
+        ],
         "description": "Changelog unreleased",
         "body": [
             "# Unreleased",
-            "+ added: ${0}",
-            "+ changed: ",
-            "+ deprecated: ",
-            "+ removed: ",
-            "+ fixed: ",
-            "+ security: ",
-            "+ refactor: ",
-            "+ docs: ",
+            "- added: ${0}",
+            "- changed: ",
+            "- deprecated: ",
+            "- removed: ",
+            "- fixed: ",
+            "- security: ",
+            "- refactor: ",
+            "- docs: ",
             "  "
         ]
     },
     "Changelog version": {
         "scope": "md, markdown",
-        "prefix": "changelog_version",
+        "prefix": [
+            "changelog_version",
+            "version"
+        ],
         "description": "Changelog version section",
         "body": [
             "# ${1:0}.${2:0}.${3:0}",
-            "+ added: ${0}",
-            "+ changed: ",
-            "+ deprecated: ",
-            "+ removed: ",
-            "+ fixed: ",
-            "+ security: ",
-            "+ refactor: ",
-            "+ docs: ",
+            "- added: ${0}",
+            "- changed: ",
+            "- deprecated: ",
+            "- removed: ",
+            "- fixed: ",
+            "- security: ",
+            "- refactor: ",
+            "- docs: ",
             "  "
         ]
     },
