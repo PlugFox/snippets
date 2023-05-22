@@ -64,6 +64,23 @@
       "Flow.end(flow.id);"
     ]
   },
+  "Stopwatch": {
+    "scope": "flutter, dart",
+    "prefix": "stopwatch",
+    "description": "Stopwatch",
+    "body": [
+      "final stopwatch = Stopwatch()..start();",
+      "try {",
+      "  /* ... */",
+      "} finally {",
+      "  log(",
+      "    '${(stopwatch..stop()).elapsedMicroseconds} μs',",
+      "    name: 'select',",
+      "    level: 100,",
+      "  );",
+      "}"
+    ]
+  },
   "Relieve event-loop": {
     "scope": "flutter, dart",
     "prefix": ["relieve", "discharge"],
@@ -478,7 +495,7 @@
     "description": "Buisness Logic Component Events",
     "body": [
       "part of '${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)(_event)/${1}${2}/g}_bloc.dart';\n",
-      "/* ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)(_event)/${1:/upcase}${2:/camelcase}/g}} Events */\n",
+      "/// Business Logic Component ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)(bloc)/${1:/upcase}${2:/camelcase}/g}} Events",
       "@freezed",
       "class ${1}Event with _$${1}Event {",
       "  const ${1}Event._();\n",
@@ -499,7 +516,7 @@
     "description": "Buisness Logic Component States",
     "body": [
       "part of '${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)(_state)/${1}${2}/g}_bloc.dart';\n",
-      "/* ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)(_state)/${1:/upcase}${2:/camelcase}/g}} States */\n",
+      "/// Business Logic Component ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)(bloc)/${1:/upcase}${2:/camelcase}/g}} States",
       "@freezed",
       "class ${1}State with _$${1}State {",
       "  const ${1}State._();\n",
@@ -546,7 +563,7 @@
       "part '${TM_FILENAME_BASE}.freezed.dart';",
       "part '${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)(_bloc)/${1}${2}/g}_event.dart';",
       "part '${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)(_bloc)/${1}${2}/g}_state.dart';\n",
-      "/// Buisiness Logic Component ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)(bloc)/${1:/upcase}${2:/camelcase}/g}}BLoC",
+      "/// Business Logic Component ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)(bloc)/${1:/upcase}${2:/camelcase}/g}}BLoC",
       "class ${1}BLoC extends Bloc<${1}Event, ${1}State> implements EventSink<${1}Event> {",
       "  ${1}BLoC({",
       "    required final I${1}Repository repository,",
@@ -663,7 +680,7 @@
       "    @Default('An error has occurred') final String message,",
       "  }) = Error${1}State;",
       "}\n",
-      "/// Buisiness Logic Component ${1}BLoC",
+      "/// Business Logic Component ${1}BLoC",
       "class ${1}BLoC extends Bloc<${1}Event, ${1}State> implements EventSink<${1}Event> {",
       "  ${1}BLoC({",
       "    required final I${1}Repository repository,",
@@ -911,10 +928,11 @@
       "class Mock${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)/${1:/upcase}${2:/camelcase}/g}} extends Fake implements ${1} {}"
     ]
   },
+  /* Other snippets */
   "Singleton": {
     "scope": "flutter, dart",
     "prefix": "singleton",
-    "description": "Generate Fake class",
+    "description": "Create a singleton class in Dart",
     "body": [
       "/// ${1} Singleton class",
       "class ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)/${1:/upcase}${2:/camelcase}/g}} {",
@@ -1156,8 +1174,8 @@
   "Pragma": {
     "scope": "flutter, dart",
     "prefix": ["@pragma", "pragma"],
-    "description": "Pragma annotation",
-    "body": "@pragma(${1|'vm:entry-point','vm:prefer-inline','dart2js:tryInline'|})"
+    "description": "Pragma annotation https://mrale.ph/dartvm/pragmas.html",
+    "body": "@pragma(${1|'vm:entry-point','vm:never-inline','vm:prefer-inline','dart2js:tryInline','vm:notify-debugger-on-exception','vm:invisible','vm:always-consider-inlining','flutter:keep-to-string','flutter:keep-to-string-in-subtypes'|})"
   },
   "Dart doc disable documentation": {
     "scope": "flutter, dart",
@@ -1167,7 +1185,7 @@
   },
   "Dart doc category": {
     "scope": "flutter, dart",
-    "prefix": ["doc-category", "dartdoc-category", "@doc-category"],
+    "prefix": ["category", "doc-category", "dartdoc-category", "@doc-category"],
     "description": "Add category to documentation",
     "body": ["/// {@${1|category,subCategory|} ${0}}"]
   },
@@ -1243,5 +1261,48 @@
     "prefix": ["@meta", "meta", "@annotation", "annotation"],
     "description": "Meta annotation",
     "body": "@${1|immutable,useResult,internal,protected,literal,mustCallSuper,sealed,alwaysThrows,factory,visibleForOverriding,visibleForTesting,experimental,nonVirtual,doNotStore,optionalTypeArgs|}"
+  },
+  "Logging": {
+    "scope": "flutter, dart",
+    "prefix": ["logging", "logger"],
+    "description": "Logging",
+    "body": [
+      "import 'dart:async';",
+      "import 'dart:developer' as developer;",
+      "",
+      "/// Tracing information",
+      "final void Function(Object? message) fine = _logAll('FINE', 500);",
+      "",
+      "/// Static configuration messages",
+      "final void Function(Object? message) config = _logAll('CONF', 700);",
+      "",
+      "/// Iformational messages",
+      "final void Function(Object? message) info = _logAll('INFO', 800);",
+      "",
+      "/// Potential problems",
+      "final void Function(Object exception, [StackTrace? stackTrace, String? reason])",
+      "    warning = _logAll('WARN', 900);",
+      "",
+      "/// Serious failures",
+      "final void Function(Object error, [StackTrace stackTrace, String? reason])",
+      "    severe = _logAll('ERR!', 1000);",
+      "",
+      "void Function(",
+      "  Object? message, [",
+      "  StackTrace? stackTrace,",
+      "  String? reason,",
+      "]) _logAll(String prefix, int level) =>",
+      "    (Object? message, [StackTrace? stackTrace, String? reason]) {",
+      "      //if (Zone.current[kLogEnabled] != true) return;",
+      "      developer.log(",
+      "        '[$prefix] ${reason ?? message}',",
+      "        level: level,",
+      "        name: 'main',",
+      "        error: message is Exception || message is Error ? message : null,",
+      "        stackTrace: stackTrace,",
+      "      );",
+      "    };",
+      ""
+    ]
   }
 }
