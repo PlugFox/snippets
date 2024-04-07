@@ -1,7 +1,10 @@
 {
   "Stateless Widget": {
     "scope": "flutter, dart",
-    "prefix": ["stl", "statelessWidget"],
+    "prefix": [
+      "stl",
+      "statelessWidget"
+    ],
     "description": "Snippet for Stateless Widget",
     "body": [
       "import 'package:flutter/material.dart';\n\n",
@@ -10,7 +13,9 @@
       "/// {@endtemplate}",
       "class $1 extends StatelessWidget {",
       "  /// {@macro $2}",
-      "  const $1({super.key});",
+      "  const $1({",
+      "    super.key, // ignore: unused_element",
+      "  });",
       "  ",
       "  @override",
       "  Widget build(BuildContext context) =>",
@@ -20,7 +25,10 @@
   },
   "Stateless Widget with child": {
     "scope": "flutter, dart",
-    "prefix": ["stlChild", "statelessWidgetWithChild"],
+    "prefix": [
+      "stlChild",
+      "statelessWidgetWithChild"
+    ],
     "description": "Snippet for Stateless Widget with child",
     "body": [
       "import 'package:flutter/material.dart';\n\n",
@@ -31,7 +39,7 @@
       "  /// {@macro $2}",
       "  const $1({",
       "    required this.child,",
-      "    super.key,",
+      "    super.key, // ignore: unused_element",
       "  });",
       "  ",
       "  /// The widget below this widget in the tree.",
@@ -45,7 +53,10 @@
   },
   "Stateful Widget": {
     "scope": "flutter, dart",
-    "prefix": ["stf", "statefulWidget"],
+    "prefix": [
+      "stf",
+      "statefulWidget"
+    ],
     "description": "Snippet for Stateful Widget",
     "body": [
       "import 'package:flutter/material.dart';",
@@ -55,7 +66,9 @@
       "/// {@endtemplate}",
       "class ${1} extends StatefulWidget {",
       "  /// {@macro $2}",
-      "  const ${1}({super.key});",
+      "  const ${1}({",
+      "    super.key, // ignore: unused_element",
+      "  });",
       "  ",
       "  /// The state from the closest instance of this class",
       "  /// that encloses the given context, if any.",
@@ -78,7 +91,7 @@
       "  }",
       "  ",
       "  @override",
-      "  void didUpdateWidget(${1} oldWidget) {",
+      "  void didUpdateWidget(covariant ${1} oldWidget) {",
       "    super.didUpdateWidget(oldWidget);",
       "    // Widget configuration changed",
       "  }",
@@ -105,7 +118,10 @@
   },
   "Stateful Widget with child": {
     "scope": "flutter, dart",
-    "prefix": ["stfChild", "statefulfWithChild"],
+    "prefix": [
+      "stfChild",
+      "statefulfWithChild"
+    ],
     "description": "Snippet for Stateful Widget with child",
     "body": [
       "import 'package:flutter/material.dart';",
@@ -117,7 +133,7 @@
       "  /// {@macro $2}",
       "  const $1({",
       "    required this.child,",
-      "    super.key,",
+      "    super.key, // ignore: unused_element",
       "  });",
       "  ",
       "  /// The widget below this widget in the tree.",
@@ -143,7 +159,7 @@
       "  }",
       "  ",
       "  @override",
-      "  void didUpdateWidget(${1} oldWidget) {",
+      "  void didUpdateWidget(covariant ${1} oldWidget) {",
       "    super.didUpdateWidget(oldWidget);",
       "    // Widget configuration changed",
       "  }",
@@ -174,7 +190,10 @@
   },
   "Scope Widget": {
     "scope": "flutter, dart",
-    "prefix": ["scope", "statefulScope"],
+    "prefix": [
+      "scope",
+      "statefulScope"
+    ],
     "description": "Snippet for Scope Widget",
     "body": [
       "import 'package:flutter/widgets.dart';\n",
@@ -185,7 +204,7 @@
       "  /// {@macro ${2}}",
       "  const ${1}({",
       "    required this.child,",
-      "    super.key,",
+      "    super.key,  // ignore: unused_element",
       "  });\n",
       "  /// The widget below this widget in the tree.",
       "  final Widget child;\n",
@@ -201,7 +220,7 @@
       "    // Initial state initialization",
       "  }\n",
       "  @override",
-      "  void didUpdateWidget(${1} oldWidget) {",
+      "  void didUpdateWidget(covariant ${1} oldWidget) {",
       "    super.didUpdateWidget(oldWidget);",
       "    // Widget configuration changed",
       "  }\n",
@@ -235,7 +254,7 @@
       "  /// For example: `${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}}.maybeOf(context)`.",
       "  static _Inherited${1}? maybeOf(BuildContext context, {bool listen = true}) => listen",
       "    ? context.dependOnInheritedWidgetOfExactType<_Inherited${1}>()",
-      "    : context.getElementForInheritedWidgetOfExactType<_Inherited${1}>()?.widget as _Inherited${1}?;",
+      "    : context.getInheritedWidgetOfExactType<_Inherited${1}>();",
       "",
       "  static Never _notFoundInheritedWidgetOfExactType() =>",
       "    throw ArgumentError(",
@@ -274,7 +293,7 @@
       "  const $1({",
       "    required this.child,",
       "    this.duration = const Duration(milliseconds: 250),",
-      "    super.key,",
+      "    super.key, // ignore: unused_element",
       "  });",
       "  ",
       "  /// The widget below this widget in the tree.",
@@ -310,7 +329,7 @@
       "  }",
       "  ",
       "  @override",
-      "  void didUpdateWidget(${1} oldWidget) {",
+      "  void didUpdateWidget(covariant ${1} oldWidget) {",
       "    super.didUpdateWidget(oldWidget);",
       "    if (widget.duration != _controller.duration) {",
       "      _controller.duration = widget.duration;",
@@ -372,7 +391,10 @@
   },
   "Inherited Widget": {
     "scope": "flutter, dart",
-    "prefix": ["inh", "inheritedWidget"],
+    "prefix": [
+      "inh",
+      "inheritedWidget"
+    ],
     "description": "Inherited Widget",
     "body": [
       "import 'package:flutter/material.dart';\n\n",
@@ -383,7 +405,7 @@
       "  /// {@macro $2}",
       "  const ${1}({",
       "    required super.child,",
-      "    super.key,",
+      "    super.key, // ignore: unused_element",
       "  });",
       "  ",
       "  @override",
@@ -394,7 +416,10 @@
   },
   "Inherited Notifier": {
     "scope": "flutter, dart",
-    "prefix": ["inhNotifier", "inheritedNotifier"],
+    "prefix": [
+      "inhNotifier",
+      "inheritedNotifier"
+    ],
     "description": "Inherited Notifier",
     "body": [
       "import 'package:flutter/material.dart';\n\n",
@@ -406,7 +431,7 @@
       "  const ${1}({",
       "    required super.notifier,",
       "    required super.child,",
-      "    super.key,",
+      "    super.key, // ignore: unused_element",
       "  });",
       "  ",
       "  @override",
@@ -417,7 +442,10 @@
   },
   "Inherited Model": {
     "scope": "flutter, dart",
-    "prefix": ["inhModel", "inheritedModel"],
+    "prefix": [
+      "inhModel",
+      "inheritedModel"
+    ],
     "description": "Inherited Model",
     "body": [
       "import 'package:collection/collection.dart';",
@@ -431,7 +459,7 @@
       "  const ${1}({",
       "    required this.values,",
       "    required super.child,",
-      "    super.key,",
+      "    super.key, // ignore: unused_element",
       "  });",
       "",
       "  final List<${2:Entity}> values;",
@@ -441,7 +469,7 @@
       "  /// e.g. `${1}.maybeOf(context)`.",
       "  static ${1}? maybeOf(BuildContext context, {bool listen = true}) => listen",
       "      ? context.dependOnInheritedWidgetOfExactType<${1}>()",
-      "      : context.getElementForInheritedWidgetOfExactType<${1}>()?.widget as ${1}?;",
+      "      : context.getInheritedWidgetOfExactType<${1}>();",
       "",
       "  /// Get [List<${2}>] by [ID]",
       "  static ${2}? getById(BuildContext context, ID id, {bool listen = true}) =>",
@@ -491,7 +519,10 @@
   },
   "Custom Painter": {
     "scope": "flutter, dart",
-    "prefix": ["painter", "customPainter"],
+    "prefix": [
+      "painter",
+      "customPainter"
+    ],
     "description": "Used for creating custom paint",
     "body": [
       "/// {@template ${2:$TM_FILENAME_BASE}}",
@@ -516,7 +547,10 @@
   },
   "Custom Clipper ": {
     "scope": "flutter, dart",
-    "prefix": ["clipper", "customClipper"],
+    "prefix": [
+      "clipper",
+      "customClipper"
+    ],
     "description": "Used for creating custom shapes",
     "body": [
       "/// {@template ${2:$TM_FILENAME_BASE}}",
@@ -538,7 +572,10 @@
   },
   "of": {
     "scope": "flutter, dart",
-    "prefix": ["of", "maybeOf"],
+    "prefix": [
+      "of",
+      "maybeOf"
+    ],
     "description": "InheritedWidget.of(BuildContext)",
     "body": [
       "/// The state from the closest instance of this class",
@@ -546,7 +583,7 @@
       "/// e.g. `${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}}.maybeOf(context)`.",
       "static ${1}? maybeOf(BuildContext context, {bool listen = true}) => listen",
       "  ? context.dependOnInheritedWidgetOfExactType<${1}>()?.controller",
-      "  : (context.getElementForInheritedWidgetOfExactType<${1}>()?.widget as ${1}?)",
+      "  : context.getInheritedWidgetOfExactType<${1}>()?.controller",
       "",
       "static Never _notFoundInheritedWidgetOfExactType() =>",
       "  throw ArgumentError(",
@@ -683,7 +720,7 @@
     "description": "Called whenever the widget configuration changes.",
     "body": [
       "@override",
-      "void didUpdateWidget (${1:Type} ${2:oldWidget}) {",
+      "void didUpdateWidget (covariant ${1:Type} ${2:oldWidget}) {",
       "  super.didUpdateWidget(${2:oldWidget});",
       "  ${0:}",
       "}"
@@ -786,7 +823,9 @@
   },
   "Wrap with Builder": {
     "scope": "flutter, dart",
-    "prefix": ["wrapWithBuilder"],
+    "prefix": [
+      "wrapWithBuilder"
+    ],
     "description": "Wrap a widget with Builder widget.",
     "body": [
       "Builder(",
@@ -847,7 +886,10 @@
   },
   "Animated Switcher": {
     "scope": "flutter, dart",
-    "prefix": ["animatedSwitcher", "switcher"],
+    "prefix": [
+      "animatedSwitcher",
+      "switcher"
+    ],
     "description": "Creates an Animated Switcher.",
     "body": [
       "AnimatedSwitcher(",
@@ -922,25 +964,20 @@
     "scope": "flutter, dart",
     "prefix": "debugP",
     "description": "Prints a message to the console, which you can access using the flutter tool's `logs` command (flutter logs).",
-    "body": ["debugPrint(${1:statement});"]
+    "body": [
+      "debugPrint(${1:statement});"
+    ]
   },
   "Material App": {
     "scope": "flutter, dart",
     "prefix": "mateapp",
     "description": "Create a MaterialApp",
     "body": [
-      "import 'dart:async';",
-      "import 'dart:developer';\n",
-      "import 'package:flutter/material.dart';\n\n",
-      "void main() => runZonedGuarded<Future<void>>(() async {",
-      "      runApp(const App());",
-      "    }, (error, stackTrace) => log(",
-      "         'Top level exception',",
-      "         error: error,",
-      "         stackTrace: stackTrace,",
-      "         level: 1000,",
-      "         name: 'main',",
-      "      ),",
+      "import 'dart:async';\n",
+      "import 'package:flutter/material.dart';\n",
+      "void main() => runZonedGuarded<void>(",
+      "      () => runApp(const App()),",
+      "      (error, stackTrace) => print('Top level exception: $error\\n$stackTrace'), // ignore: avoid_print",
       "    );\n",
       "/// {@template app}",
       "/// App widget.",
@@ -1037,7 +1074,10 @@
   },
   "Test Widgets": {
     "scope": "flutter, dart",
-    "prefix": ["testWidget", "widgetTest"],
+    "prefix": [
+      "testWidget",
+      "widgetTest"
+    ],
     "description": "Create a testWidgets function",
     "body": [
       "testWidgets(",
@@ -1046,6 +1086,22 @@
       "    ${0}",
       "  },",
       ");"
+    ]
+  },
+  "Test Material App": {
+    "scope": "flutter, dart",
+    "prefix": "testApp",
+    "description": "Create a test app",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "import 'package:flutter_test/flutter_test.dart';",
+      "void main() => group('', () {",
+      "    Widget testScreen(Widget child) => MaterialApp(home: child);",
+      "    setUpAll(() async {});",
+      "    tearDownAll(() async {});",
+      "    test('', () async {});",
+      "    testWidgets('', (tester) async {});",
+      "});"
     ]
   },
   "Material Package": {
@@ -1068,7 +1124,9 @@
   },
   "GoRouteData": {
     "scope": "flutter, dart",
-    "prefix": ["goRouteData"],
+    "prefix": [
+      "goRouteData"
+    ],
     "description": "GoRouteData",
     "body": [
       "/// ${1}Route",

@@ -39,7 +39,10 @@
   },
   "Catch Error handler": {
     "scope": "flutter, dart",
-    "prefix": ["catchError", "onError"],
+    "prefix": [
+      "catchError",
+      "onError"
+    ],
     "description": "Catch Error handler",
     "body": [
       "catchError(",
@@ -52,7 +55,10 @@
   },
   "Flow & Timeline example": {
     "scope": "flutter, dart",
-    "prefix": ["flow", "timeline"],
+    "prefix": [
+      "flow",
+      "timeline"
+    ],
     "description": "Flow & Timeline example",
     "body": [
       "final flow = Flow.begin();",
@@ -83,7 +89,10 @@
   },
   "Relieve event-loop": {
     "scope": "flutter, dart",
-    "prefix": ["relieve", "discharge"],
+    "prefix": [
+      "relieve",
+      "discharge"
+    ],
     "description": "Relieve event-loop",
     "body": [
       "/// Allow relieve impact on event loop on large collections.",
@@ -118,7 +127,10 @@
   },
   "Platform conditional imports": {
     "scope": "flutter, dart",
-    "prefix": ["conditional_imports", "import_conditional"],
+    "prefix": [
+      "conditional_imports",
+      "import_conditional"
+    ],
     "description": "Platform conditional imports",
     "body": [
       "import 'stub.dart'",
@@ -130,47 +142,61 @@
   },
   "Changelog unreleased": {
     "scope": "md, markdown",
-    "prefix": ["changelog_unreleased", "unreleased"],
+    "prefix": [
+      "changelog_unreleased",
+      "unreleased"
+    ],
     "description": "Changelog unreleased",
     "body": [
-      "# Unreleased",
-      "- added: ${0}",
-      "- changed: ",
-      "- deprecated: ",
-      "- removed: ",
-      "- fixed: ",
-      "- security: ",
-      "- refactor: ",
-      "- docs: ",
+      "## Unreleased",
+      "",
+      "- **ADDED**: ${0}",
+      "- **CHANGED**: ",
+      "- **DEPRECATED**: ",
+      "- **REMOVED**: ",
+      "- **FIXED**: ",
+      "- **SECURITY**: ",
+      "- **REFACTOR**: ",
+      "- **DOCS**: ",
       "  "
     ]
   },
   "Changelog version": {
     "scope": "md, markdown",
-    "prefix": ["changelog_version", "version"],
+    "prefix": [
+      "changelog_version",
+      "version"
+    ],
     "description": "Changelog version section",
     "body": [
-      "# ${1:0}.${2:0}.${3:0}",
-      "- added: ${0}",
-      "- changed: ",
-      "- deprecated: ",
-      "- removed: ",
-      "- fixed: ",
-      "- security: ",
-      "- refactor: ",
-      "- docs: ",
+      "## ${1:0}.${2:0}.${3:0}",
+      "",
+      "- **ADDED**: ${0}",
+      "- **CHANGED**: ",
+      "- **DEPRECATED**: ",
+      "- **REMOVED**: ",
+      "- **FIXED**: ",
+      "- **SECURITY**: ",
+      "- **REFACTOR**: ",
+      "- **DOCS**: ",
       "  "
     ]
   },
   "Comment": {
     "scope": "flutter, dart",
-    "prefix": ["cmnt", "comment"],
+    "prefix": [
+      "cmnt",
+      "comment"
+    ],
     "description": "Comment block",
     "body": "// --- ${1} --- //\n\n$0"
   },
   "Divider": {
     "scope": "flutter, dart",
-    "prefix": ["dvd", "divider_comment"],
+    "prefix": [
+      "dvd",
+      "divider_comment"
+    ],
     "description": "Divider comment line",
     "body": "// --- ${1} --- //\n\n$0"
   },
@@ -182,7 +208,7 @@
       "/// {@template ${2:$TM_FILENAME_BASE}}",
       "/// ${1:${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}} enumeration",
       "/// {@endtemplate}",
-      "enum ${1} with Comparable<${1}> {",
+      "enum ${1} implements Comparable<${1}> {",
       "  /// ${3}",
       "  ${3:a}('${3}'),",
       "",
@@ -196,18 +222,13 @@
       "  const ${1}(this.value);${0}",
       "",
       "  /// Creates a new instance of [${1}] from a given string.",
-      "  static ${1} fromValue(String? value, {${1}? fallback}) {",
-      "    switch (value) {",
-      "      case '${3}':",
-      "        return ${3};",
-      "      case '${4}':",
-      "        return ${4};",
-      "      case '${5}':",
-      "        return ${5};",
-      "      default:",
-      "        return fallback ?? (throw ArgumentError.value(value));",
-      "    }",
-      "  }",
+      "  static ${1} fromValue(String? value, {${1}? fallback}) =>",
+      "    switch (value?.trim().toLowerCase()) {",
+      "      case '${3}' => ${3},",
+      "      case '${4}' => ${4},",
+      "      case '${5}' => ${5},",
+      "      _ => fallback ?? (throw ArgumentError.value(value));",
+      "    };",
       "",
       "  /// Value of the enum",
       "  final String value;",
@@ -217,16 +238,12 @@
       "    required T Function() ${3},",
       "    required T Function() ${4},",
       "    required T Function() ${5},",
-      "  }) {",
+      "  }) =>",
       "    switch (this) {",
-      "      case ${1}.${3}:",
-      "        return ${3}();",
-      "      case ${1}.${4}:",
-      "        return ${4}();",
-      "      case ${1}.${5}:",
-      "        return ${5}();",
-      "    }",
-      "  }",
+      "      ${1}.${3} => ${3}(),",
+      "      ${1}.${4} => ${4}(),",
+      "      ${1}.${5} => ${5}(),",
+      "    };",
       "",
       "  /// Pattern matching",
       "  T maybeMap<T>({",
@@ -280,7 +297,11 @@
   },
   "Data class": {
     "scope": "flutter, dart",
-    "prefix": ["entity", "dataClass", "classData"],
+    "prefix": [
+      "entity",
+      "dataClass",
+      "classData"
+    ],
     "description": "Create new class",
     "body": [
       "import 'package:meta/meta.dart';\n\n",
@@ -370,7 +391,10 @@
   },
   "Immutable collection data class": {
     "scope": "flutter, dart",
-    "prefix": ["immutableCollection", "collectionDataClass"],
+    "prefix": [
+      "immutableCollection",
+      "collectionDataClass"
+    ],
     "description": "Immutable collection data class",
     "body": [
       "import 'dart:collection';\n",
@@ -450,33 +474,37 @@
   },
   "Reverse bypass": {
     "scope": "flutter, dart",
-    "prefix": ["reverseList"],
+    "prefix": [
+      "reverseList"
+    ],
     "description": "Reverse list traversal in a loop",
     "body": [
-      "final length = list.length;",
-      "for (var i = 0; i < length; i++) {",
-      "  final idx = length - i - 1;",
-      "  if (list[idx].isOdd) {",
-      "    list.removeAt(idx);",
-      "  }",
-      "}\n"
+      "for (var i = list.length - 1; i >= 0; i--) $0"
     ]
   },
   "Part": {
     "scope": "flutter, dart",
     "prefix": "part",
     "description": "Part of file",
-    "body": ["part '${TM_FILENAME_BASE}.g.dart';$0"]
+    "body": [
+      "part '${TM_FILENAME_BASE}.g.dart';$0"
+    ]
   },
   "Mocks": {
     "scope": "flutter, dart",
     "prefix": "mocks",
     "description": "Import mocks file",
-    "body": ["import '${TM_FILENAME_BASE}.mocks.dart';$0"]
+    "body": [
+      "import '${TM_FILENAME_BASE}.mocks.dart';$0"
+    ]
   },
   "Hash Code": {
     "scope": "flutter, dart",
-    "prefix": ["hashCode", "equals", "=="],
+    "prefix": [
+      "hashCode",
+      "equals",
+      "=="
+    ],
     "description": "Hash Code and Equals override",
     "body": [
       "@override",
@@ -491,7 +519,11 @@
   },
   "BLoC Events": {
     "scope": "flutter, dart",
-    "prefix": ["events", "bloc_events", "BLoC_Events"],
+    "prefix": [
+      "events",
+      "bloc_events",
+      "BLoC_Events"
+    ],
     "description": "Buisness Logic Component Events",
     "body": [
       "part of '${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)(_event)/${1}${2}/g}_bloc.dart';\n",
@@ -512,7 +544,11 @@
   },
   "States": {
     "scope": "flutter, dart",
-    "prefix": ["states", "bloc_states", "BLoC_States"],
+    "prefix": [
+      "states",
+      "bloc_states",
+      "BLoC_States"
+    ],
     "description": "States",
     "body": [
       "import 'package:meta/meta.dart';",
@@ -555,30 +591,28 @@
       "}\n",
       "/// Idling state",
       "/// {@nodoc}",
-      "final class ${2}State\\$Idle extends ${2}State with _\\$${2}State {",
+      "final class ${2}State\\$Idle extends ${2}State  {",
       "  /// {@nodoc}",
       "  const ${2}State\\$Idle({required super.data, super.message = 'Idling'});",
       "}\n",
       "/// Processing",
       "/// {@nodoc}",
-      "final class ${2}State\\$Processing extends ${2}State with _\\$${2}State {",
+      "final class ${2}State\\$Processing extends ${2}State  {",
       "  /// {@nodoc}",
       "  const ${2}State\\$Processing({required super.data, super.message = 'Processing'});",
       "}\n",
       "/// Successful",
       "/// {@nodoc}",
-      "final class ${2}State\\$Successful extends ${2}State with _\\$${2}State {",
+      "final class ${2}State\\$Successful extends ${2}State  {",
       "  /// {@nodoc}",
       "  const ${2}State\\$Successful({required super.data, super.message = 'Successful'});",
       "}\n",
       "/// Error",
       "/// {@nodoc}",
-      "final class ${2}State\\$Error extends ${2}State with _\\$${2}State {",
+      "final class ${2}State\\$Error extends ${2}State  {",
       "  /// {@nodoc}",
       "  const ${2}State\\$Error({required super.data, super.message = 'An error has occurred.'});",
       "}\n",
-      "/// {@nodoc}",
-      "base mixin _\\$${2}State on ${2}State {}\n",
       "/// Pattern matching for [${2}State].",
       "typedef ${2}StateMatch<R, S extends ${2}State> = R Function(S state);\n",
       "/// {@nodoc}",
@@ -645,12 +679,18 @@
       "  int get hashCode => data.hashCode;\n",
       "  @override",
       "  bool operator ==(Object other) => identical(this, other);",
+      "",
+      "  @override",
+      "  String toString() => '${2}State(data: \\$data, message: \\$message)';",
       "}\n"
     ]
   },
   "BLoC": {
     "scope": "flutter, dart",
-    "prefix": ["bloc", "BLoC"],
+    "prefix": [
+      "bloc",
+      "BLoC"
+    ],
     "description": "Buisness Logic Component",
     "body": [
       "import 'dart:async';\n",
@@ -953,7 +993,10 @@
   },
   "Freezed": {
     "scope": "flutter, dart",
-    "prefix": ["freezed", "freezed_v1"],
+    "prefix": [
+      "freezed",
+      "freezed_v1"
+    ],
     "description": "Freezed data class",
     "body": [
       "import 'package:freezed_annotation/freezed_annotation.dart';",
@@ -978,7 +1021,10 @@
   },
   "Freezed union": {
     "scope": "flutter, dart",
-    "prefix": ["freezed_union", "freezed_union_v1"],
+    "prefix": [
+      "freezed_union",
+      "freezed_union_v1"
+    ],
     "description": "Freezed union data classes",
     "body": [
       "// ignore_for_file: invalid_annotation_target",
@@ -990,15 +1036,37 @@
       "",
       "/// ${1} data class",
       "@Freezed(unionKey: 'type', unionValueCase: FreezedUnionCase.snake)",
-      "class ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)/${1:/upcase}${2:/camelcase}/g}} with _$${1} {",
+      "sealed class ${1:${TM_FILENAME_BASE/(^[a-zA-Z]{1})(.*)/${1:/upcase}${2:/camelcase}/g}} with _$${1} {",
       "  const ${1}._();",
       "",
-      "  /// Other${1}",
-      "  @FreezedUnionValue('OTHER')",
-      "  const factory ${1}.other({",
-      "    @JsonKey(name: 'value', required: true, disallowNullValue: true)",
-      "      required final String value,",
-      "  }) = Other${1};",
+      "  /// ${1}\\$Idle",
+      "  @FreezedUnionValue('IDLE')",
+      "  const factory ${1}.idle({",
+      "    @JsonKey(name: 'data', required: true, disallowNullValue: true)",
+      "      required final String data,",
+      "    @JsonKey(name: 'message', required: false) @Default('Idling.') String message,",
+      "  }) = ${1}\\$Idle;",
+      "",
+      "  /// ${1}\\$Processing",
+      "  @FreezedUnionValue('PROCESSING')",
+      "  const factory ${1}.processing({",
+      "    @JsonKey(name: 'data', required: true, disallowNullValue: true) required final String data,",
+      "    @JsonKey(name: 'message', required: false) @Default('Processing.') String message,",
+      "  }) = ${1}\\$Processing;",
+      "",
+      "  /// ${1}\\$Successful",
+      "  @FreezedUnionValue('SUCCESSFUL')",
+      "  const factory ${1}.successful({",
+      "    @JsonKey(name: 'data', required: true, disallowNullValue: true) required final String data,",
+      "    @JsonKey(name: 'message', required: false) @Default('Successful.') String message,",
+      "  }) = ${1}\\$Successful;",
+      "",
+      "  /// ${1}\\$Error",
+      "  @FreezedUnionValue('ERROR')",
+      "  const factory ${1}.error({",
+      "    @JsonKey(name: 'data', required: true, disallowNullValue: true) required final String data,",
+      "    @JsonKey(name: 'message', required: false) @Default('An error has occurred.') String message,",
+      "  }) = ${1}\\$Error;",
       "  ${0}",
       "  /// Generate ${1} class from Map<String, Object?>",
       "  factory ${1}.fromJson(Map<String, Object?> json) => _$${1}FromJson(json);",
@@ -1007,7 +1075,11 @@
   },
   "JSON": {
     "scope": "flutter, dart",
-    "prefix": ["json", "fromJson", "toJson"],
+    "prefix": [
+      "json",
+      "fromJson",
+      "toJson"
+    ],
     "description": "Generate JSON",
     "body": [
       "/// Generate Class from Map<String, Object?>",
@@ -1042,7 +1114,10 @@
   },
   "StreamTransformer with handlers": {
     "scope": "flutter, dart",
-    "prefix": ["transformer_handlers", "stream_transformer_handlers"],
+    "prefix": [
+      "transformer_handlers",
+      "stream_transformer_handlers"
+    ],
     "description": "StreamTransformer with handlers, convert types",
     "body": [
       "import 'dart:async';\n",
@@ -1169,7 +1244,10 @@
   },
   "StreamTransformer with control queue delay": {
     "scope": "flutter, dart",
-    "prefix": ["transformer_delay", "stream_transformer_delay"],
+    "prefix": [
+      "transformer_delay",
+      "stream_transformer_delay"
+    ],
     "description": "StreamTransformer with control queue delay",
     "body": [
       "import 'dart:async';\n",
@@ -1240,7 +1318,10 @@
   },
   "No Such Method": {
     "scope": "flutter, dart",
-    "prefix": ["nosm", "noSuchMethod"],
+    "prefix": [
+      "nosm",
+      "noSuchMethod"
+    ],
     "description": "This method is invoked when a non-existent method or property is accessed.",
     "body": [
       "@override",
@@ -1260,7 +1341,10 @@
   },
   "Test": {
     "scope": "flutter, dart",
-    "prefix": ["test", "unitTest"],
+    "prefix": [
+      "test",
+      "unitTest"
+    ],
     "description": "Create a test function",
     "body": [
       "test('${1:test description}', () {",
@@ -1270,25 +1354,46 @@
   },
   "Pragma": {
     "scope": "flutter, dart",
-    "prefix": ["@pragma", "pragma"],
+    "prefix": [
+      "@pragma",
+      "pragma"
+    ],
     "description": "Pragma annotation https://mrale.ph/dartvm/pragmas.html",
     "body": "@pragma(${1|'vm:entry-point','vm:never-inline','vm:prefer-inline','dart2js:tryInline','vm:notify-debugger-on-exception','vm:invisible','vm:always-consider-inlining','flutter:keep-to-string','flutter:keep-to-string-in-subtypes'|})"
   },
   "Dart doc disable documentation": {
     "scope": "flutter, dart",
-    "prefix": ["doc-disabled", "nodoc", "@nodoc", "@doc-disabled"],
+    "prefix": [
+      "doc-disabled",
+      "nodoc",
+      "@nodoc",
+      "@doc-disabled"
+    ],
     "description": "No documentation annotation",
-    "body": ["/// {@nodoc}"]
+    "body": [
+      "/// {@nodoc}"
+    ]
   },
   "Dart doc category": {
     "scope": "flutter, dart",
-    "prefix": ["category", "doc-category", "dartdoc-category", "@doc-category"],
+    "prefix": [
+      "category",
+      "doc-category",
+      "dartdoc-category",
+      "@doc-category"
+    ],
     "description": "Add category to documentation",
-    "body": ["/// {@${1|category,subCategory|} ${0}}"]
+    "body": [
+      "/// {@${1|category,subCategory|} ${0}}"
+    ]
   },
   "Dart doc image": {
     "scope": "flutter, dart",
-    "prefix": ["doc-image", "dartdoc-image", "@doc-image"],
+    "prefix": [
+      "doc-image",
+      "dartdoc-image",
+      "@doc-image"
+    ],
     "description": "Add image to documentation",
     "body": [
       "/// {@image <image alt='' src='${0:https://host.tld/path/to/image.png}'>}"
@@ -1296,7 +1401,11 @@
   },
   "Dart doc animation": {
     "scope": "flutter, dart",
-    "prefix": ["doc-animation", "dartdoc-animation", "@doc-animation"],
+    "prefix": [
+      "doc-animation",
+      "dartdoc-animation",
+      "@doc-animation"
+    ],
     "description": "Add animation to documentation",
     "body": "/// {@animation name 100 200 ${0:https://host.tld/path/to/video.mp4}}"
   },
@@ -1349,19 +1458,38 @@
   },
   "Deprecated": {
     "scope": "flutter, dart",
-    "prefix": ["@deprecated", "deprecated"],
+    "prefix": [
+      "@deprecated",
+      "deprecated"
+    ],
     "description": "Deprecated",
     "body": "@Deprecated('${0:Reason}')"
   },
   "Meta": {
     "scope": "flutter, dart",
-    "prefix": ["@meta", "meta", "@annotation", "annotation"],
+    "prefix": [
+      "@meta",
+      "meta",
+      "@annotation",
+      "annotation"
+    ],
     "description": "Meta annotation",
     "body": "@${1|immutable,useResult,internal,protected,literal,mustCallSuper,sealed,alwaysThrows,factory,visibleForOverriding,visibleForTesting,experimental,nonVirtual,doNotStore,optionalTypeArgs|}"
   },
+  "Coverage": {
+    "scope": "flutter, dart",
+    "prefix": [
+      "coverage"
+    ],
+    "description": "Coverage annotation",
+    "body": "// coverage:${1|ignore-line,ignore-start,ignore-end,ignore-file|}"
+  },
   "Logging": {
     "scope": "flutter, dart",
-    "prefix": ["logging", "logger"],
+    "prefix": [
+      "logging",
+      "logger"
+    ],
     "description": "Logging",
     "body": [
       "import 'dart:async';",
