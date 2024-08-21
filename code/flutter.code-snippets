@@ -977,7 +977,7 @@
       "import 'package:flutter/material.dart';\n",
       "void main() => runZonedGuarded<void>(",
       "      () => runApp(const App()),",
-      "      (error, stackTrace) => print('Top level exception: $error\\n$stackTrace'), // ignore: avoid_print",
+      "      (error, stackTrace) => print('Top level exception: \\$error\\n\\$stackTrace'), // ignore: avoid_print",
       "    );\n",
       "/// {@template app}",
       "/// App widget.",

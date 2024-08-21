@@ -135,7 +135,7 @@
     "body": [
       "import 'stub.dart'",
       "    // ignore: uri_does_not_exist",
-      "    if (dart.library.html) 'web.dart'",
+      "    if (dart.library.js_interop) 'js.dart'",
       "    // ignore: uri_does_not_exist",
       "    if (dart.library.io) 'io.dart';\n"
     ]
@@ -590,35 +590,25 @@
       "  const ${2}State({required super.data, required super.message});",
       "}\n",
       "/// Idling state",
-      "/// {@nodoc}",
       "final class ${2}State\\$Idle extends ${2}State  {",
-      "  /// {@nodoc}",
       "  const ${2}State\\$Idle({required super.data, super.message = 'Idling'});",
       "}\n",
       "/// Processing",
-      "/// {@nodoc}",
       "final class ${2}State\\$Processing extends ${2}State  {",
-      "  /// {@nodoc}",
       "  const ${2}State\\$Processing({required super.data, super.message = 'Processing'});",
       "}\n",
       "/// Successful",
-      "/// {@nodoc}",
       "final class ${2}State\\$Successful extends ${2}State  {",
-      "  /// {@nodoc}",
       "  const ${2}State\\$Successful({required super.data, super.message = 'Successful'});",
       "}\n",
       "/// Error",
-      "/// {@nodoc}",
       "final class ${2}State\\$Error extends ${2}State  {",
-      "  /// {@nodoc}",
       "  const ${2}State\\$Error({required super.data, super.message = 'An error has occurred.'});",
       "}\n",
       "/// Pattern matching for [${2}State].",
       "typedef ${2}StateMatch<R, S extends ${2}State> = R Function(S state);\n",
-      "/// {@nodoc}",
       "@immutable",
       "abstract base class _\\$${2}StateBase {",
-      "  /// {@nodoc}",
       "  const _\\$${2}StateBase({required this.data, required this.message});\n",
       "  /// Data entity payload.",
       "  @nonVirtual",
@@ -681,7 +671,7 @@
       "  bool operator ==(Object other) => identical(this, other);",
       "",
       "  @override",
-      "  String toString() => '${2}State(data: \\$data, message: \\$message)';",
+      "  String toString() => '${2}State{message: \\$message}';",
       "}\n"
     ]
   },
@@ -1365,14 +1355,10 @@
     "scope": "flutter, dart",
     "prefix": [
       "doc-disabled",
-      "nodoc",
-      "@nodoc",
       "@doc-disabled"
     ],
     "description": "No documentation annotation",
-    "body": [
-      "/// {@nodoc}"
-    ]
+    "body": []
   },
   "Dart doc category": {
     "scope": "flutter, dart",
